@@ -1,15 +1,22 @@
 <script lang="ts">
-	export let letter: string;
-	export let translationOffset: number;
-	export let rotationOffset: number;
-	export let highlighted: boolean;
+	import { onMount } from "svelte";
+	import { currentTheme } from "../themes.js";
 
-	let x: number = Math.floor(Math.random() * translationOffset) - (translationOffset / 2);
-	let y: number = Math.floor(Math.random() * translationOffset) - (translationOffset / 2);
-	let r: number = Math.floor(Math.random() * rotationOffset) - (rotationOffset / 2);
+	export let letter: string;
+	export let highlighted: boolean;
+	export let settings: {rotationalOffset: number, translationalOffset: number}
+
+	let x: number;
+	let y: number;
+	let r: number;
+	onMount(() => {
+		x = Math.floor(Math.random() * settings.translationalOffset) - (settings.translationalOffset / 2);
+		y = Math.floor(Math.random() * settings.translationalOffset) - (settings.translationalOffset / 2);
+		r = Math.floor(Math.random() * settings.rotationalOffset) - (settings.rotationalOffset / 2);
+	});
 </script>
 
-<p style="--x: {x}px; --y: {y}px; --r: {r}deg; --h: {highlighted ? '#fb4938' : 'inherit'};">{letter}</p>
+<p style="--x: {x}px; --y: {y}px; --r: {r}deg; --h: {highlighted ? $currentTheme.red : 'inherit'};">{letter}</p>
 
 <style>
 	p {
