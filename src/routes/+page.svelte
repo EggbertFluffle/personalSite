@@ -3,6 +3,7 @@
 
 	import FloatingLetter from "./components/FloatingLetter.svelte";
 	import Nav from "./components/Nav.svelte";
+	import Blogs from "./components/Blogs.svelte";
 
 	let firstName: string = "Eggbert";
 	let lastName: string = "Fluffle";
@@ -14,9 +15,9 @@
 </script>
 
 
-<main style="--bg: {$currentTheme.background};">
+<main style="--background1: {$currentTheme.background1};">
 	<div class="hero">
-		<h1 style="--fg: {$currentTheme.foreground};">
+		<h1 style="--foreground: {$currentTheme.foreground};">
 			{#each firstName as l}
 				<FloatingLetter letter={l} settings={floatingLettersSettings} highlighted={vowels.includes(l)}/>
 			{/each}
@@ -27,6 +28,7 @@
 		</h1>
 		<Nav/>
 	</div>
+	<Blogs />
 </main>
 
 <style>
@@ -37,7 +39,7 @@
 	}
 
 	main {
-		background-color: var(--bg);
+		background-color: var(--background1);
 		font-family: MonaspaceKr;
 		height: 100vh;
 	}
@@ -50,7 +52,7 @@
 	h1 {
 		padding: 0px;
 		font-size: 16em;
-		color: var(--fg);
+		color: var(--foreground);
 		flex-grow: 1;
 	}
 </style>

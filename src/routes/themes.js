@@ -2,7 +2,8 @@ import { derived, writable } from "svelte/store";
 
 const themes = {
 	"gruvbox": {
-		background: "#3c3836",
+		background1: "#3c3836",
+		background2: "#282828",
 		foreground: "#ebdbb2",
 		red: "#fb4934",
 		green: "#b8bb26",
@@ -10,7 +11,8 @@ const themes = {
 		blue: "#83a598",
 		purple: "#d3869b",
 		cyan: "#8ec07c",
-		orange: "#fe8019"
+		orange: "#fe8019",
+		grey: "#928374"
 	},
 	"dracula": {
 		background: "#282a36",
@@ -21,7 +23,8 @@ const themes = {
 		blue: "#6272a4",
 		purple: "#ffb86c",
 		cyan: "#8be9fd",
-		orange: "#ffb86c"
+		orange: "#ffb86c",
+		grey: "#928374"
 	},
 	"tokyo_night": {
 		background: "#1a1b26",
@@ -32,7 +35,8 @@ const themes = {
 		blue: "#7aa2f7",
 		purple: "#bb9af7",
 		cyan: "#73daca",
-		orange: "#ff9e64"
+		orange: "#ff9e64",
+		grey: "#928374"
 	}
 };
 
