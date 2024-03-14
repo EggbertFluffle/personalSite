@@ -5,8 +5,8 @@
 <nav>
 	<div></div>
 	<a href="/">{"<"}<span style="color: {$currentTheme.green}">WhoAmI</span>{">"}</a>
-	<a href="#projects">{"<"}<span style="color: {$currentTheme.yellow}">Projects</span>{">"}</a>
-	<a href="#blog">{"<"}<span style="color: {$currentTheme.orange}">Blog</span>{">"}</a>
+	<a href="/">{"<"}<span style="color: {$currentTheme.yellow}">Projects</span>{">"}</a>
+	<a href="/">{"<"}<span style="color: {$currentTheme.orange}">Blog</span>{">"}</a>
 	<a href="/">{"<"}<span style="color: {$currentTheme.cyan}">Contact</span>{">"}</a>
 	<div></div>
 </nav>
@@ -24,7 +24,6 @@ nav {
 a {
 	font-size: calc(2rem + 2vw);
 	text-decoration: none;
-	letter-spacing: 0.5rem;
 	color: #ebdbb2;
 }
 
@@ -48,25 +47,5 @@ a::after {
 
 a:hover::after {
 	width: 100%;
-}
-
-@media (max-width: 850px) {
-	nav {
-		align-items: start;
-		line-height: 3rem;
-	}
-
-	a {
-		font-size: 2rem;
-		letter-spacing: 0.25rem;
-	}
-
-	a::after {
-		display: none;
-	}
-
-	div {
-		display: block;
-	}
 }
 </style>

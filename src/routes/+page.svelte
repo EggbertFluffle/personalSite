@@ -4,8 +4,8 @@
 	import FloatingLetter from "./components/FloatingLetter.svelte";
 	import Nav from "./components/Nav.svelte";
 
-	let firstName: string = "Harrison";
-	let lastName: string = "DiAmbrosio";
+	let firstName: string = "Eggbert";
+	let lastName: string = "Fluffle";
 	let vowels: string = "aeiouAEIUO";
 	let floatingLettersSettings = {
 		translationalOffset: 1500,
@@ -30,9 +30,15 @@
 </main>
 
 <style>
+	@font-face {
+		font-family: 'MonaspaceKR';
+		font-style: normal;
+		src: url('/fonts/MonaspiceKrNerdFont-Regular.otf');
+	}
+
 	main {
 		background-color: var(--bg);
-		font-family: monospace;
+		font-family: MonaspaceKr;
 		height: 100vh;
 	}
 
@@ -43,7 +49,7 @@
 
 	h1 {
 		padding: 0px;
-		font-size: 12em;
+		font-size: 16em;
 		color: var(--fg);
 		flex-grow: 1;
 	}

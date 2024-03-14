@@ -36,7 +36,7 @@ const themes = {
 	}
 };
 
-const themeName = writable("dracula");
+const themeName = writable("gruvbox");
 const currentTheme = derived(themeName, ($themeName) => themes[$themeName])
 
 export { themeName, currentTheme };
