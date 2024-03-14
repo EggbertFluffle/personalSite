@@ -1,16 +1,3 @@
-<script>
-	import { onMount } from "svelte";
-	import hljs from "highlight.js/lib/core";
-	import typescript from "highlight.js/lib/languages/typescript";
-
-	hljs.registerLanguage("typescript", typescript);
-	onMount(() => {
-		const codeElements = document.getElementsByTagName("code");
-		for(let i = 0; i < codeElements.length; i++) {
-			codeElements[i].innerHTML = hljs.highlight(codeElements[i].innerText, { language: "typescript" }).value;
-		};
-	});
-</script>
 
 <h1 id="tui-3d-graphics">TUI 3D Graphics</h1>
 <p>Three-dimensional graphics are the best thing since 2D graphics, but also many times harder. I&#39;ve wanted to break into 3D graphics for a while now, namely because of its connection to first-person games like Minecraft or the Call of Duty franchise. But after some surface-level digging, I&#39;ve found there is a lot more to the third dimension than I first thought.</p>
@@ -147,29 +134,29 @@ init();
 <pre><code class="language-typescript">angle += 0.05;
 
 let rotationX = matrix([
-        [1, 0,               0               ],
-        [0, Math.cos(angle), -Math.sin(angle)],
-        [0, Math.sin(angle), Math.cos(angle) ]
-    ]);
+	[1, 0,               0               ],
+	[0, Math.cos(angle), -Math.sin(angle)],
+	[0, Math.sin(angle), Math.cos(angle) ]
+]);
 
-    let rotationY = matrix([
-        [ Math.cos(angle), 0, Math.sin(angle)],
-        [ 0,               1, 0              ],
-        [-Math.sin(angle), 0, Math.cos(angle)]
-    ]);
+let rotationY = matrix([
+	[ Math.cos(angle), 0, Math.sin(angle)],
+	[ 0,               1, 0              ],
+	[-Math.sin(angle), 0, Math.cos(angle)]
+]);
 
-    let rotationZ = matrix([
-        [Math.cos(angle), -Math.sin(angle), 0],
-        [Math.sin(angle),  Math.cos(angle), 0],
-        [0,                0,               1]
-    ]);
+let rotationZ = matrix([
+	[Math.cos(angle), -Math.sin(angle), 0],
+	[Math.sin(angle),  Math.cos(angle), 0],
+	[0,                0,               1]
+]);
 
-    let projectedPoints: Array&lt;math.Matrix&gt; = box.map(p =&gt; &rbrace;
-        p = multiply(rotationY, p);
-        p = multiply(rotationX, p);
-        p = multiply(rotationZ, p);
-        p = multiply(orthoProjection, p);
-        return p;
-    &rbrace;);
+let projectedPoints: Array&lt;math.Matrix&gt; = box.map(p =&gt; &rbrace;
+	p = multiply(rotationY, p);
+	p = multiply(rotationX, p);
+	p = multiply(rotationZ, p);
+	p = multiply(orthoProjection, p);
+	return p;
+&rbrace;);
 </code></pre>
 <p>In this example, I apply all the rotations at the same time, but it&#39;s perfectly possible to assign different angles to different axes and not apply some rotations at all. This is fine for my purposes and the process is identical for tetrahedrons and octahedrons.<br>This entire mini-project was just a way to dip my toes into 3D rendering and get a feel for it. I don&#39;t know if it&#39;s a problem with JavaScript, Bun, or the Chromebook I&#39;m doing this on, but there&#39;s some annoying flickering going on and assume one of those is the problem. It could also just be my approach but I&#39;m lazy. Anyway, that&#39;s all for EggTUI and its limited 3D features. If you have any questions about the code, feel free to e-mail me at <a href="mailto:&#x68;&#x64;&#105;&#97;&#x6d;&#98;&#114;&#x6f;&#115;&#x69;&#x6f;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x68;&#x64;&#105;&#97;&#x6d;&#98;&#114;&#x6f;&#115;&#x69;&#x6f;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a> but you&#39;re probably better off googling it.</p>

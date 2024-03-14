@@ -1,9 +1,21 @@
 <script lang="ts">
 	import { currentTheme } from "../themes.js";
 	import { onMount } from "svelte";
+	import hljs from "highlight.js/lib/core";
+	import typescript from "highlight.js/lib/languages/typescript";
+    import ThemePicker from "../components/ThemePicker.svelte";
+
+	hljs.registerLanguage("typescript", typescript);
+	onMount(() => {
+		const codeElements = document.getElementsByTagName("code");
+		for(let i = 0; i < codeElements.length; i++) {
+			codeElements[i].innerHTML = hljs.highlight(codeElements[i].innerText, { language: "typescript" }).value;
+		};
+	});
 </script>
 
 <main style="--background1: {$currentTheme.background1}; --background2: {$currentTheme.background2}; --foreground: {$currentTheme.foreground}; --red: {$currentTheme.red}; --blue: {$currentTheme.blue}; --yellow: {$currentTheme.yellow}; --purple: {$currentTheme.purple}; --orange: {$currentTheme.orange}; --green: {$currentTheme.green}; --aqua: {$currentTheme.aqua}; --grey: {$currentTheme.grey};">
+	<ThemePicker /> 
 	<slot></slot>
 </main>
 
@@ -58,6 +70,7 @@
 
 	main :global(code) {
 		font-family: monospace;
+		background-color: var(--background2);
 		font-size: 1.2rem;
 	}
 
@@ -71,101 +84,101 @@
 		padding: 1rem;
 	}
 
-	:global(.hljs),
-	:global(.hljs-subs)
+	main :global(.hljs),
+	main :global(.hljs-subs)
 	{
 		color: var(--foreground);
 	}
 
 	/* Gruvbox Red */
-	:global(.hljs-deletion),
-	:global(.hljs-formula),
-	:global(.hljs-keyword),
-	:global(.hljs-link),
-	:global(.hljs-selector-tag) 
+	main :global(.hljs-deletion),
+	main :global(.hljs-formula),
+	main :global(.hljs-keyword),
+	main :global(.hljs-link),
+	main :global(.hljs-selector-tag) 
 	{
 		color: var(--red);
 	}
 
 	/* Gruvbox Blue */
-	:global(.hljs-built_in),
-	:global(.hljs-emphasis),
-	:global(.hljs-name),
-	:global(.hljs-quote),
-	:global(.hljs-strong),
-	:global(.hljs-title),
-	:global(.hljs-variable) 
+	main :global(.hljs-built_in),
+	main :global(.hljs-emphasis),
+	main :global(.hljs-name),
+	main :global(.hljs-quote),
+	main :global(.hljs-strong),
+	main :global(.hljs-title),
+	main :global(.hljs-variable) 
 	{
 		color: var(--blue);
 	}
 
 	/* Gruvbox Yellow */
-	:global(.hljs-attr),
-	:global(.hljs-params),
-	:global(.hljs-template-tag),
-	:global(.hljs-type) 
+	main :global(.hljs-attr),
+	main :global(.hljs-params),
+	main :global(.hljs-template-tag),
+	main :global(.hljs-type) 
 	{
 		color: var(--yellow);
 	}
 
 	/* Gruvbox Purple */
-	:global(.hljs-builtin-name),
-	:global(.hljs-doctag),
-	:global(.hljs-literal),
-	:global(.hljs-number) 
+	main :global(.hljs-builtin-name),
+	main :global(.hljs-doctag),
+	main :global(.hljs-literal),
+	main :global(.hljs-number) 
 	{
 		color: var(--purple);
 	}
 
 	/* Gruvbox Orange */
-	:global(.hljs-code),
-	:global(.hljs-meta),
-	:global(.hljs-regexp),
-	:global(.hljs-template-variable) 
+	main :global(.hljs-code),
+	main :global(.hljs-meta),
+	main :global(.hljs-regexp),
+	main :global(.hljs-template-variable) 
 	{
 		color: var(--orange);
 	}
 
 	/* Gruvbox Green */
-	:global(.hljs-addition),
-	:global(.hljs-meta-string),
-	:global(.hljs-section),
-	:global(.hljs-selector-attr),
-	:global(.hljs-selector-class),
-	:global(.hljs-string),
-	:global(.hljs-symbol) 
+	main :global(.hljs-addition),
+	main :global(.hljs-meta-string),
+	main :global(.hljs-section),
+	main :global(.hljs-selector-attr),
+	main :global(.hljs-selector-class),
+	main :global(.hljs-string),
+	main :global(.hljs-symbol) 
 	{
 		color: var(--green);
 	}
 
 	/* Gruvbox Aqua */
-	:global(.hljs-attribute),
-	:global(.hljs-bullet),
-	:global(.hljs-class),
-	:global(.hljs-function),
-	:global(.hljs-function .hljs-keyword),
-	:global(.hljs-meta-keyword),
-	:global(.hljs-selector-pseudo),
-	:global(.hljs-tag) 
+	main :global(.hljs-attribute),
+	main :global(.hljs-bullet),
+	main :global(.hljs-class),
+	main :global(.hljs-function),
+	main :global(.hljs-function .hljs-keyword),
+	main :global(.hljs-meta-keyword),
+	main :global(.hljs-selector-pseudo),
+	main :global(.hljs-tag) 
 	{
 		color: var(--aqua);
 	}
 
 	/* Gruvbox Gray */
-	:global(.hljs-comment) 
+	main :global(.hljs-comment) 
 	{
 		color: var(--grey);
 	}
 
-	:global(.hljs-comment),
-	:global(.hljs-emphasis) 
+	main :global(.hljs-comment),
+	main :global(.hljs-emphasis) 
 	{
 		font-style: italic;
 	}
 
-	:global(.hljs-section),
-	:global(.hljs-strong),
-	:global(.hljs-tag) 
+	main :global(.hljs-section),
+	main :global(.hljs-strong),
+	main :global(.hljs-tag) 
 	{
 		font-weight: bold;
 	}

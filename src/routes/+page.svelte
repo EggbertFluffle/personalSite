@@ -4,6 +4,7 @@
 	import FloatingLetter from "./components/FloatingLetter.svelte";
 	import Nav from "./components/Nav.svelte";
 	import Blogs from "./components/Blogs.svelte";
+	import ThemePicker from "./components/ThemePicker.svelte";
 
 	let firstName: string = "Eggbert";
 	let lastName: string = "Fluffle";
@@ -16,6 +17,7 @@
 
 
 <main style="--background1: {$currentTheme.background1};">
+	<ThemePicker />
 	<div class="hero">
 		<h1 style="--foreground: {$currentTheme.foreground};">
 			{#each firstName as l}
