@@ -15,7 +15,8 @@ const themes = {
 		grey: "#928374"
 	},
 	"dracula": {
-		background: "#282a36",
+		background1: "#44475a",
+		background2: "#282a36",
 		foreground: "#f8f8f2",
 		red: "#ff5555",
 		green: "#50fa7b",
@@ -24,10 +25,11 @@ const themes = {
 		purple: "#ffb86c",
 		cyan: "#8be9fd",
 		orange: "#ffb86c",
-		grey: "#928374"
+		grey: "#6272a4"
 	},
 	"tokyo_night": {
-		background: "#1a1b26",
+		background1: "#1a1b26",
+		background2: "#1f2335",
 		foreground: "#a9b1d6",
 		red: "#f7768e",
 		green: "#9ece6a",
@@ -36,7 +38,7 @@ const themes = {
 		purple: "#bb9af7",
 		cyan: "#73daca",
 		orange: "#ff9e64",
-		grey: "#928374"
+		grey: "#a9b1d6"
 	}
 };
 

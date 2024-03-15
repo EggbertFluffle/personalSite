@@ -1,3 +1,17 @@
+<script>
+	import { onMount } from "svelte";
+	import hljs from "highlight.js/lib/core";
+	import cpp from "highlight.js/lib/languages/cpp";
+
+	hljs.registerLanguage("cpp", cpp);
+	onMount(() => {
+		const codeElements = document.getElementsByTagName("code");
+		for(let i = 0; i < codeElements.length; i++) {
+			codeElements[i].innerHTML = hljs.highlight(codeElements[i].innerText, { language: "cpp" }).value;
+		};
+	});
+</script>
+
 <h1 id="wolfenstein-terminal-raycaster">Wolfenstein Terminal Raycaster</h1>
 <p>So after watching a video by the youtube <a href="https://www.youtube.com/watch?v=fSjc8vLMg8c">jdh</a> I was <em>heavily</em> inspired to make a Wolfenstein 3D style renderer myself. But after my previous project beign working on the Tui 3D Renderer, I wanted of course to stay int he TUI style. TUI stands for <strong>T</strong>ext <strong>U</strong>ser <strong>I</strong>nterface and most commonly any program with a UI in the terminal will be considered a TUI application. They will almost most commonly be using curses, or in my case <a href="https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/">ncurses</a>, to handle the complex terminal escape codes and portability to other operating systems. I intend to make this an understading of the <em>math</em> that goes behind this truely 2d raycast renderer, without delving so much into application. The same principles can be applied in almost any language or graphics medium so I emplore you to come up with a really creative method, shoot me an e-mail if u do! Finnaly, my program in writtenin C++ and is a mess so thats why I&#39;m keeping the actual code present to a minimum.</p>
 <p><em>Also I like lists to its gonna be a list &lt;3</em></p>

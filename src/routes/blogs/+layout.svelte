@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import { currentTheme } from "../themes.js";
+	import { onMount } from "svelte";
 </script>
 
 <main style="--background1: {$currentTheme.background1}; --background2: {$currentTheme.background2}; --foreground: {$currentTheme.foreground}; --red: {$currentTheme.red}; --blue: {$currentTheme.blue}; --yellow: {$currentTheme.yellow}; --purple: {$currentTheme.purple}; --orange: {$currentTheme.orange}; --green: {$currentTheme.green}; --aqua: {$currentTheme.aqua}; --grey: {$currentTheme.grey};">
@@ -7,58 +8,65 @@
 </main>
 
 <style>
-	:global(*) {
-		color: #ebdbb2;
-	}
-
 	main {
-		padding-inline: 15%;
+		padding-inline: 25%;
 		padding-block: 5%;
 		background-color: var(--background1);
 		min-height: 100vmin;
-		font-size: 22px;
+		font-size: 24px;
 	}
 
-	:global(h1) {
-		color: var(--green);
+	main :global(*) {
+		color: var(--foreground);
+		font-family: sans-serif;
+	}
+
+	main :global(h1) {
+		color: var(--red);
 		font-size: 3em;
 		margin-top: 0px;
 	}
 
-	:global(h1)::before {
+	main :global(h1)::before {
 		content: "# ";
 		color: var(--grey);
 	}
 
-	:global(h2) {
-		color: var(--purple);
+	main :global(h2) {
+		color: var(--green);
 		font-size: 2em;
 	}
 
-	:global(h2)::before {
+	main :global(h2)::before {
 		content: "## ";
 		color: var(--grey);
 	}
 
-	:global(p) {
+	main :global(p) {
 		text-indent: 2em;
 		margin-block: 0.75rem;
+		line-height: 1.75rem;
 	}
 
-	:global(a) {
+	main :global(a) {
 		color: var(--yellow);
 	}
 
-	:global(a):visited {
+	main :global(a):visited {
 		color: var(--orange);
 	}
 
-	:global(code) {
-		background: var(--background2);
+	main :global(code) {
+		font-family: monospace;
+		font-size: 1.2rem;
 	}
 
-	:global(pre) {
-		background: #282828;
+	main :global(span) {
+		font-family: monospace;
+	}
+
+	main :global(pre) {
+		background: var(--background2);
 		white-space: pre-wrap;
 		padding: 1rem;
 	}
