@@ -15,7 +15,7 @@
 <style>
 	div {
 		color: var(--foreground);
-		margin-inline: 15%;
+		margin-inline: 15rem;
 	}
 
 	ul {

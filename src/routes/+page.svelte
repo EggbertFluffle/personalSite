@@ -51,7 +51,7 @@
 		display: flex;
 		align-items: center;
 		height: 100vmin;
-		font-family: MonaspaceKr;
+		font-family: MonaspaceKr, monospace;
 	}
 
 	h1 {

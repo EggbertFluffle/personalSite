@@ -9,7 +9,7 @@
 	<ul>
 		<li><a target="_blank" href="https://github.com/EggbertFluffle/nvim">Neovim</a> - Text editor and the only way I can type now. If I need to use anotehr editor I need vim binds, without question. Package management done with <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a> which makes the whole configuration process super portable.</li>
 		<li><a target="_blank" href="https://voidlinux.org/">Void Linux</a> - My choice for linux distro. Mostly used out of recommendation, but also has a cool logo and I do appreciate the simplicity and speed. I honestly don't find a huge difference between runit and systemd, but I also don't play with init systems often enough.</li>
-		<li><a target="_blank" href="https://dwm.suckless.org/">dwm</a> - Window manager of choice. Simple, works well, and I love how the config is written in C. As for complementary programs, the only one that adds any functionality besides comsetics is <a href="https://tools.suckless.org/slstatus/">slstatus</a>.</li>
+		<li><a target="_blank" href="https://dwm.suckless.org/">dwm</a> - Window manager of choice. Simple, works well, and I love how the config is written in C.</li>
 		<li><a target="_blank" href="https://github.com/EggbertFluffle/kitty">Kitty</a> - Just a terminal emulator, I like it for the in built image rendering. It also has nice paneling that can be simmilar to my dwm binds but I don't take advantage of those often.</li>
 		<li><a target="_blank" href="https://github.com/saysjonathan/dwm.tmux">dwm.tmux</a> - I use tmux for when I'm on my school chromebook or not in a graphical enviroenment with tiling window management. This nice plugin makes it easy to get keybinds simmilar to dwm and it's a nice set and forget.</li>
 	</ul>
