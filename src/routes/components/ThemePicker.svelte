@@ -4,7 +4,7 @@
 	let pickedTheme: string = "gruvbox";
 </script>
 
-<select bind:value={pickedTheme} on:change={() => themeName.update(() => pickedTheme)} style="--background2: {$currentTheme.background2}; --foreground: {$currentTheme.foreground}; --red: {$currentTheme.red};">
+<select bind:value={pickedTheme} on:change={() => themeName.update(() => pickedTheme)} style="--background1: {$currentTheme.background1}; --foreground: {$currentTheme.foreground}; --red: {$currentTheme.red};">
 	<option id="gruvbox" value="gruvbox">Gruvbox</option>
 	<option id="dracula" value="dracula">Dracula</option>
 	<option id="tokyo_night" value="tokyo_night">Tokyo-Night</option>
@@ -12,8 +12,11 @@
 
 <style>
 	select {
-		background-color: var(--background2);
+		position: absolute;
+		right: 0px;
+		background-color: var(--background1);
 		color: var(--foreground);
+		border: none;
 		border-color: var(--red);
 		border-radius: 0px;
 		padding: 0.15rem;

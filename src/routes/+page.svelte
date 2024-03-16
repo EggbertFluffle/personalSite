@@ -3,11 +3,12 @@
 
 	import FloatingLetter from "./components/FloatingLetter.svelte";
 	import Nav from "./components/Nav.svelte";
+	import WhoAmI from "./components/WhoAmI.svelte";
 	import Blogs from "./components/Blogs.svelte";
 	import ThemePicker from "./components/ThemePicker.svelte";
 
-	let firstName: string = "Eggbert";
-	let lastName: string = "Fluffle";
+	let firstName: string = "Harrison";
+	let lastName: string = "DiAmbrosio";
 	let vowels: string = "aeiouAEIUO";
 	let floatingLettersSettings = {
 		translationalOffset: 1500,
@@ -30,6 +31,7 @@
 		</h1>
 		<Nav/>
 	</div>
+	<WhoAmI/>
 	<Blogs />
 </main>
 
@@ -42,18 +44,19 @@
 
 	main {
 		background-color: var(--background1);
-		font-family: MonaspaceKr;
-		height: 100vh;
+		font-family: monospace;
 	}
 
 	.hero {
 		display: flex;
 		align-items: center;
+		height: 100vmin;
+		font-family: MonaspaceKr;
 	}
 
 	h1 {
 		padding: 0px;
-		font-size: 16em;
+		font-size: 14em;
 		color: var(--foreground);
 		flex-grow: 1;
 	}

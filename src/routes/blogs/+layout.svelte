@@ -14,8 +14,9 @@
 	});
 </script>
 
+<ThemePicker /> 
 <main style="--background1: {$currentTheme.background1}; --background2: {$currentTheme.background2}; --foreground: {$currentTheme.foreground}; --red: {$currentTheme.red}; --blue: {$currentTheme.blue}; --yellow: {$currentTheme.yellow}; --purple: {$currentTheme.purple}; --orange: {$currentTheme.orange}; --green: {$currentTheme.green}; --aqua: {$currentTheme.aqua}; --grey: {$currentTheme.grey};">
-	<ThemePicker /> 
+	<a href="/#blog" style="font-family: monospace; color: var(--foreground); font-weight: bold;">&lt; Back</a>
 	<slot></slot>
 </main>
 
