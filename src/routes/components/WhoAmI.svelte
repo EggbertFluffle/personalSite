@@ -4,14 +4,14 @@
 
 <div id="whoAmI" style="--foreground: {$currentTheme.foreground}; --red: {$currentTheme.red}; --green: {$currentTheme.green}; --background2: {$currentTheme.background2}; --yellow: {$currentTheme.yellow}; --orange: {$currentTheme.orange};">
 	<h2>&lt;<span>WhoAmI</span>&gt;</h2>
-	<p>I am <em>H<span>a</span>rr<span>i</span>s<span>o</span>n D<span>iA</span>mbr<span>o</span>s<span>io</span></em>. A humble programmer interested in all things relative to web development, creative coding, computer graphics, game development and linux. I am all self taught, and have found learning about comptuers to be one of my all time favorite hobbies. I am familliarizing myself with a couple languages, such as C, C++ and TypeScript, but I'm most comfaterble with JavaScript. Additionally, I'm most comfaterble with putting together projects in a web development setting, using SvelteKit and NodeJS/Bun. As of now I'm a graduating highschool senior and plan to study Computer Science in university. Below are some various technologies I take advantage of as a developer and in my workflow.</p>
+	<p>I am <em>H<span>a</span>rr<span>i</span>s<span>o</span>n D<span>iA</span>mbr<span>o</span>s<span>io</span></em>. A humble programmer interested in all things related to web development, creative coding, computer graphics, game development, linux and mathematical phenomena. I am all self taught, and have found learning about comptuers to be one of my life's passions. I am familliarizing myself with a few programming languages: C++, TypeScript, JavaScript, and some Java. Additionally, I'm most comfaterble as a webd developer and frequently dive deep into the community on new runtimes, framewroks and best practices. I find Svelte to come with a great exsperience and enjoy building projects most often in the framework. As of now I'm a graduating senior from Saint Peter's Prep and plan to study Computer Science (or Computer Engineering) in university. I am a deticated member of my school's FRC robotics team (5438, the Technological Terrors) as a programmer. Finnaly, below I've listed some various technologies I take advantage of as a developer and must-haves in my workflow.</p>
 	<h3>Technologies and Dotfiles</h3>
 	<ul>
 		<li><a target="_blank" href="https://github.com/EggbertFluffle/nvim">Neovim</a> - Text editor and the only way I can type now. If I need to use anotehr editor I need vim binds, without question. Package management done with <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a> which makes the whole configuration process super portable.</li>
-		<li><a target="_blank" href="https://voidlinux.org/">Void Linux</a> - My choice for linux distro. Mostly used out of recommendation, but also has a cool logo and I do appreciate the simplicity and speed. I honestly don't find a huge difference between runit and systemd, but I also don't play with init systems often enough.</li>
+		<li><a target="_blank" href="https://voidlinux.org/">Linux (Void, Debian)</a> - My choice for linux distros. Mostly used out of recommendation (or no other option). As for Void, I do appreciate the minimalism and boot speed. Debian is nice and simple as well, and if not for the outdated repos, it would be my favorite.</li>
 		<li><a target="_blank" href="https://dwm.suckless.org/">dwm</a> - Window manager of choice. Simple, works well, and I love how the config is written in C. As for complementary programs, the only one that adds any functionality besides comsetics is <a href="https://tools.suckless.org/slstatus/">slstatus</a>.</li>
 		<li><a target="_blank" href="https://github.com/EggbertFluffle/kitty">Kitty</a> - Just a terminal emulator, I like it for the in built image rendering. It also has nice paneling that can be simmilar to my dwm binds but I don't take advantage of those often.</li>
-		<li><a target="_blank" href="https://github.com/saysjonathan/dwm.tmux">dwm.tmux</a> - I use tmux for when I'm on my school chromebook or not in a graphical enviroenment with tiling window management. This nice plugin makes it easy to get keybinds simmilar to dwm and it's a nice set and forget.</li>
+		<li><a target="_blank" href="https://github.com/saysjonathan/dwm.tmux">dwm.tmux</a> - I use tmux for when I'm on my school chromebook or not in a graphical enviornment with tiling window management. This nice plugin makes it easy to get keybinds simmilar to dwm and it's a nice set-and-forget.</li>
 	</ul>
 </div>
 
@@ -30,14 +30,13 @@
 	}
 
 	h3 {
-		margin-block: 1rem;
 		font-size: 2.5rem;
 	}
 
 	p {
 		text-indent: 5rem;
-		font-size: 1.5rem;
-		margin: 2rem 5rem;
+		font-size: 1.75rem;
+		margin: 1rem 5rem;
 	}
 
 	em > span {
@@ -45,8 +44,8 @@
 	}
 
 	ul {
-		font-size: 1.5rem;
-		margin-inline: 5rem;
+		font-size: 1.75rem;
+		margin: 1rem 5rem;
 	}
 
 	a {

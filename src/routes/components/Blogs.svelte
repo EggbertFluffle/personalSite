@@ -29,7 +29,7 @@
 	}
 
 	h2 {
-		font-size: 8rem;
+		font-size: 6rem;
 	}
 
 	span {
