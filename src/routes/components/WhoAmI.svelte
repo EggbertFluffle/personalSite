@@ -4,7 +4,7 @@
 
 <div id="whoAmI" style="--foreground: {$currentTheme.foreground}; --red: {$currentTheme.red}; --green: {$currentTheme.green}; --background2: {$currentTheme.background2}; --yellow: {$currentTheme.yellow}; --orange: {$currentTheme.orange};">
 	<h2>&lt;<span>WhoAmI</span>&gt;</h2>
-	<p>I am <em>H<span>a</span>rr<span>i</span>s<span>o</span>n D<span>iA</span>mbr<span>o</span>s<span>io</span></em>. A humble programmer interested in all things related to web development, creative coding, computer graphics, game development, linux and mathematical phenomena. I am all self taught, and have found learning about comptuers to be one of my life's passions. I am familliarizing myself with a few programming languages: C++, TypeScript, JavaScript, and some Java. Additionally, I'm most comfaterble as a webd developer and frequently dive deep into the community on new runtimes, framewroks and best practices. I find Svelte to come with a great exsperience and enjoy building projects most often in the framework. As of now I'm a graduating senior from Saint Peter's Prep and plan to study Computer Science (or Computer Engineering) in university. I am a deticated member of my school's FRC robotics team (5438, the Technological Terrors) as a programmer. Finnaly, below I've listed some various technologies I take advantage of as a developer and must-haves in my workflow.</p>
+	<p>I am <em>H<span>a</span>rr<span>i</span>s<span>o</span>n D<span>iA</span>mbr<span>o</span>s<span>io</span></em>. A humble programmer interested in all things related to web development, creative coding, computer graphics, game development and linux. I am all self taught, and have found learning about comptuers to be one of my life's passions. I am familliarizing myself with a few programming languages: C++, TypeScript, JavaScript, and some Java. Additionally, I'm most comfortable as a web developer and frequently dive deep into the community on new runtimes, framewroks and best practices. I find Svelte to come with a great exsperience and enjoy building projects most often in the framework. As of now I'm a graduating senior from Saint Peter's Prep and plan to study Computer Science (or Computer Engineering) in university. Finnaly, below I've listed some various technologies I take advantage of as a developer and must-haves in my workflow.</p>
 	<h3>Technologies and Dotfiles</h3>
 	<ul>
 		<li><a target="_blank" href="https://github.com/EggbertFluffle/nvim">Neovim</a> - Text editor and the only way I can type now. If I need to use anotehr editor I need vim binds, without question. Package management done with <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a> which makes the whole configuration process super portable.</li>
@@ -54,5 +54,32 @@
 	
 	a:visited {
 		color: var(--orange);
+	}
+
+	@media (max-width: 666px) {
+		div {
+			margin-inline: 0px;
+		}
+
+		h2 {
+			margin-top: 2rem;
+			font-size: 4rem;
+		}
+
+		p {
+			text-indent: 2rem;
+			font-size: 1.25rem;
+			margin: 1rem;
+		}
+
+		h3 {
+			font-size: 2rem;
+		}
+
+		ul {
+			font-size: 1.25rem;
+			margin-inline: 1rem;
+			list-style: none;
+		}
 	}
 </style>

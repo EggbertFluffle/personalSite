@@ -35,14 +35,36 @@
 	.hero {
 		display: flex;
 		align-items: center;
-		height: 100vmin;
+		min-width: 100vw;
+		min-height: 100vh;
 		font-family: MonaspaceKr, monospace;
 	}
 
 	h1 {
 		padding: 0px;
-		font-size: 14em;
+		font-size: 11.45vw;
 		color: var(--foreground);
 		flex-grow: 1;
+	}
+
+	@media (max-width: 1000px) and (min-width: 666px) {
+		h1 {
+			font-size: 10.25vw;
+		}
+	}
+
+	@media (max-width: 666px) {
+		.hero {
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		h1 {
+			writing-mode: vertical-rl;
+			font-size: 12vh;
+			line-height: 100%;
+			text-align: left;
+			flex-grow: 0;
+		}
 	}
 </style>

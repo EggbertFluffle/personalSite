@@ -43,4 +43,25 @@
 	a:visited {
 		color: var(--orange);
 	}
+
+	@media (max-width: 666px) {
+		div {
+			margin-inline: 0px;
+		}
+
+		h2 {
+			margin-top: 2rem;
+			font-size: 4rem;
+		}
+
+		p {
+			font-size: 1.25rem;
+			margin: 1rem;
+		}
+
+		ul {
+			font-size: 1.25rem;
+			margin-inline: 1rem;
+		}
+	}
 </style>

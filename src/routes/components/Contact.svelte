@@ -5,7 +5,7 @@
 <div id="contact" style="--foreground: {$currentTheme.foreground}; --orange: {$currentTheme.orange}; --background2: {$currentTheme.background2}; --yellow: {$currentTheme.yellow}; --cyan: {$currentTheme.cyan};">
 	<h2>&lt;<span>Contact</span>&gt;</h2>
 	<ul>
-		<li>Github: <a href="https://github.com/EggbertFluffle/">https://github.com/EggbertFluffle</a></li>
+		<li>Github: <a href="https://github.com/EggbertFluffle/">EggbertFluffle</a></li>
 		<li>E-Mail: <a href="mailto:hdiambrosio@gmail.com">hdiambrosio@gmail.com</a></li>
 		<li>LinkedIn: <a href="https://www.linkedin.com/in/harrison-diambrosio-505443229/">Harrison DiAmbrosio</a></li>
 	</ul>
@@ -25,6 +25,7 @@
 	ul {
 		margin-inline: 10%;
 		font-size: 1.75rem;
+		list-style: none;
 	}
 
 	li {
@@ -41,5 +42,21 @@
 
 	a:visited {
 		color: var(--orange);
+	}
+
+	@media (max-width: 666px) {
+		div {
+			margin-inline: 0px;
+		}
+
+		h2 {
+			margin-top: 2rem;
+			font-size: 4rem;
+		}
+
+		ul {
+			font-size: 1.25rem;
+			margin-inline: 3rem;
+		}
 	}
 </style>
