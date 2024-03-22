@@ -1,23 +1,27 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<title>Harrison DiAmbrosio</title>
 		<meta charset="utf-8" />
+		<meta name="author" content="Harrison DiAmbrosio" />
+		<meta name="dscription" content="Personal site and blog" />
+		<meta name="keywords" content="HTML, CSS, JavaScript, computer science, graphics">
 		<link rel="icon" href="../favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<link href="../_app/immutable/assets/2.DXH7rHhH.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/ThemePicker.eZO-7-_n.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.skyubTdo.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/entry.jKMGgc7Z.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.Dwam67bG.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.BzJSeCpx.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.DDaOzR71.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.BkdrutWN.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.CLwWINQu.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.CWIFI-35.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.BfbdwTR0.js">
 		<link rel="modulepreload" href="../_app/immutable/nodes/0.BXHzXeDc.js">
 		<link rel="modulepreload" href="../_app/immutable/nodes/2.BxKgFJUL.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/ThemePicker.CwslZCvl.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/core.Bns4Tjg1.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/6.BsQsVYgt.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/7.BsQsVYgt.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">  <select style="--background1: #3c3836; --foreground: #ebdbb2; --red: #fb4934;" class="svelte-wlmhkk"><option id="gruvbox" value="gruvbox" class="svelte-wlmhkk" data-svelte-h="svelte-rv1l6r">Gruvbox</option><option id="dracula" value="dracula" class="svelte-wlmhkk" data-svelte-h="svelte-tafl5e">Dracula</option><option id="tokyo_night" value="tokyo_night" class="svelte-wlmhkk" data-svelte-h="svelte-eggm1l">Tokyo-Night</option></select> <main style="--background1: #3c3836; --background2: #282828; --foreground: #ebdbb2; --red: #fb4934; --blue: #83a598; --yellow: #fabd2f; --purple: #d3869b; --orange: #fe8019; --green: #b8bb26; --aqua: undefined; --grey: #928374;" class="svelte-1m6mr13"><a href="/#blog" style="font-family: monospace; color: var(--foreground); font-weight: bold;" data-svelte-h="svelte-1bmlwdn">&lt; Back</a> <h1 id="wolfenstein-terminal-raycaster" data-svelte-h="svelte-1q0ssw2">Wolfenstein Terminal Raycaster</h1> <p data-svelte-h="svelte-wu2d1d">So after watching a video by the youtube <a href="https://www.youtube.com/watch?v=fSjc8vLMg8c">jdh</a> I was <em>heavily</em> inspired to make a Wolfenstein 3D style renderer myself. But after my previous project beign working on the Tui 3D Renderer, I wanted of course to stay int he TUI style. TUI stands for <strong>T</strong>ext <strong>U</strong>ser <strong>I</strong>nterface and most commonly any program with a UI in the terminal will be considered a TUI application. They will almost most commonly be using curses, or in my case <a href="https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/">ncurses</a>, to handle the complex terminal escape codes and portability to other operating systems. I intend to make this an understading of the <em>math</em> that goes behind this truely 2d raycast renderer, without delving so much into application. The same principles can be applied in almost any language or graphics medium so I emplore you to come up with a really creative method, shoot me an e-mail if u do! Finnaly, my program in writtenin C++ and is a mess so thats why I&#39;m keeping the actual code present to a minimum.</p> <p data-svelte-h="svelte-19nrsil"><em>Also I like lists to its gonna be a list &lt;3</em></p> <h2 id="introduction" data-svelte-h="svelte-p88ani">Introduction</h2> <p data-svelte-h="svelte-1z0yuju">Wolfenstein 3D was a revolutionary game that was one of the first &quot;3D&quot; gaming experiences. Thing is, it wasnt actually 3D and the entirety of the game was really happening in 2D. What the player saw was an illusion, the 2D space was &quot;projected&quot; using 2D raycasting. Raycasting in general is a method of graphics where a ray is cast out of every single pixel on the screen to calculate what it collides with and how far it will travel until it collides with something. As you can imagine, thats a lot of math for each pixel, which puts 3 dimensional raycasting way out of the time&#39;s computing power. What the authors of Wolfenstein did was extrapolate extra information from ray that were cast only for each x pixel. Additionally, Wolfenstein used a grid to represent it&#39;s map, meaning each cell of map was either a wall or empty space and each ray would have to traverse this map grid. Of course raycasting as we know it today hadn&#39;t even existed and raycasting in 2 dimensions was actually the first step, 3D came <em>much</em> later.</p> <p data-svelte-h="svelte-5m62i8">Put simply, 2D raycasting follows these simple steps:</p> <ol data-svelte-h="svelte-1x8uhgh"><li>Cast a ray out from the player for each column of pixels on the screen</li> <li>Follow each ray until it collides with a wall or reaches some max distance</li> <li>Use the distance each ray traveled to create vertical lines on the screen</li> <li>Further ray distance = smaller screen line, shorter ray distance = longer screen line</li></ol> <p data-svelte-h="svelte-rf6kiw"><em>Thats it.</em> This was oversimplified to not include some equasions and probably the hardest part, how to calculate distances for each ray but hopefully it demystifies(CHECK THAT SPELLING) how a 2D raycaster like Wolfenstein 3D works.</p> <h2 id="first-steps" data-svelte-h="svelte-3j3dc3">First Steps</h2> <p data-svelte-h="svelte-x749cb">Again, no platform spesifics, just the math, but first I initialize ncurses and some other important setting inside of ncurses for control handling. At the moment, w, a, s, and d are for strafing, t changes the texturing method which I will touch more on later, m toggles mouse support for the camera and j and k swivel the camera. Finnaly because 2D raycasters are actually 2D, pressing p switches between the perspectives: the top down map, and the actualy 3D projected view. Although the top down is very useful for debugging, the 3D perspective is the real prize.</p> <p data-svelte-h="svelte-v85mhn">Here is the map I will be working with. Anything that is not a zero is a wall, the number of each wall comes in later for texturing.</p> <pre data-svelte-h="svelte-1l0f9h1"><code class="language-c++">std::vector&lt;int&gt; map = {
@@ -53,7 +57,7 @@ player.TakePerspective(&amp;distances, &amp;hits, &amp;uTexCoords, &amp;map, &am
 			
 			<script>
 				{
-					__sveltekit_cw7qqi = {
+					__sveltekit_1ky4b1v = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
@@ -62,11 +66,11 @@ player.TakePerspective(&amp;distances, &amp;hits, &amp;uTexCoords, &amp;map, &am
 					const data = [null,null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.skyubTdo.js"),
-						import("../_app/immutable/entry/app.CLwWINQu.js")
+						import("../_app/immutable/entry/start.Dwam67bG.js"),
+						import("../_app/immutable/entry/app.CWIFI-35.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 2, 6],
+							node_ids: [0, 2, 7],
 							data,
 							form: null,
 							error: null
@@ -80,8 +84,6 @@ player.TakePerspective(&amp;distances, &amp;hits, &amp;uTexCoords, &amp;map, &am
 		* {
 			margin: 0px;
 			padding: 0px;
-			box-sizing:	border-box;
-			scroll-behavior: smooth;
 		}
 	</style>
 </html>

@@ -35,7 +35,7 @@
 	.hero {
 		display: flex;
 		align-items: center;
-		min-width: 100vw;
+		min-width: 100mvw;
 		min-height: 100vh;
 		font-family: MonaspaceKr, monospace;
 	}

@@ -15,15 +15,16 @@
 <style>
 	div {
 		color: var(--foreground);
-		margin-inline: 15rem;
+		margin-inline: 15%;
 	}
 
 	h2 {
+		margin-top: 2rem;
 		font-size: 6rem;
 	}
 
 	ul {
-		margin-inline: 10%;
+		margin-inline: 5rem;
 		font-size: 1.75rem;
 		list-style: none;
 	}
@@ -52,11 +53,12 @@
 		h2 {
 			margin-top: 2rem;
 			font-size: 4rem;
+			text-align: center;
 		}
 
 		ul {
 			font-size: 1.25rem;
-			margin-inline: 3rem;
+			margin-inline: 2rem;
 		}
 	}
 </style>

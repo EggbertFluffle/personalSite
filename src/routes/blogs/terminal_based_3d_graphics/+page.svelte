@@ -1,4 +1,3 @@
-
 <h1 id="tui-3d-graphics">TUI 3D Graphics</h1>
 <p>Three-dimensional graphics are the best thing since 2D graphics, but also many times harder. I&#39;ve wanted to break into 3D graphics for a while now, namely because of its connection to first-person games like Minecraft or the Call of Duty franchise. But after some surface-level digging, I&#39;ve found there is a lot more to the third dimension than I first thought.</p>
 <p>Put simply, in 2D graphics, there are pixels in a grid, and that&#39;s it. From there all you need to do is manipulate those very pixels to look like whatever your heart desires. And at its core, 3D graphics is no different than 2D graphics. It&#39;s still a 2D grid of pixels that you manipulate to look a certain way. The tricky part is that you need to give the illusion of a 3D space with only 2D tools.</p>

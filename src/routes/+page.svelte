@@ -22,4 +22,8 @@
 		background-color: var(--background1);
 		font-family: monospace;
 	}
+
+	main::after {
+		color: var(--background1);
+	}
 </style>

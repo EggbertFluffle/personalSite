@@ -31,12 +31,13 @@
 
 	h3 {
 		font-size: 2.5rem;
+		margin-block: 1rem;
 	}
 
 	p {
 		text-indent: 5rem;
 		font-size: 1.75rem;
-		margin: 1rem 5rem;
+		margin-inline: 5rem;
 	}
 
 	em > span {
@@ -45,7 +46,7 @@
 
 	ul {
 		font-size: 1.75rem;
-		margin: 1rem 5rem;
+		margin-inline: 5rem;
 	}
 
 	a {
@@ -64,21 +65,23 @@
 		h2 {
 			margin-top: 2rem;
 			font-size: 4rem;
+			text-align: center;
 		}
 
 		p {
 			text-indent: 2rem;
 			font-size: 1.25rem;
-			margin: 1rem;
+			margin: 2rem;
 		}
 
 		h3 {
 			font-size: 2rem;
+			text-align: center;
 		}
 
 		ul {
 			font-size: 1.25rem;
-			margin-inline: 1rem;
+			margin: 2rem;
 			list-style: none;
 		}
 	}
