@@ -85,6 +85,51 @@
 		padding: 1rem;
 	}
 
+	main :global(ul) {
+		margin-inline: 5rem;
+	}
+	
+	main :global(ol) {
+		margin-inline: 5rem;
+	}
+
+	main :global(li) {
+		margin-block: 0.75rem;
+	}
+
+	@media (max-width: 666px) {
+		main {
+			padding-inline: 1rem;
+		}
+
+		main :global(p) {
+			font-size: 1.25rem;
+		 	line-height: 1.35rem;
+		}
+
+		main :global(ol) {
+			font-size: 1.25rem;
+		 	line-height: 1.35rem;
+			margin-inline: 2rem;
+		}
+
+		main :global(ul) {
+			font-size: 1.25rem;
+		 	line-height: 1.35rem;
+			margin-inline: 2rem;
+		}
+
+		main :global(h1) {
+			font-size: 2.5rem;
+			text-align:	center;
+		}
+
+		main :global(h2) {
+			font-size: 2rem;
+			text-align: center;
+		}
+	}
+
 	main :global(.hljs),
 	main :global(.hljs-subs)
 	{
