@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Eggbert's Blog</title>
+		<description>A personal blog about all things computers, tech, and science.</description>
+		<language>en-us</language>
+		<link>http://eggbert.neocities.org/rss.xml</link>
+		<atom:link href="http://eggbert.neocities.org/rss.xml" rel="self" type="application/rss+xml" />
+
+		<item>
+			<title>Terminal Based 3D Graphics</title>
+			<guid>https://eggbert.neocities.org/blogs/terminal_based_3d_graphics.html</guid>
+			<link>https://eggbert.neocities.org/blogs/terminal_based_3d_graphics.html</link>
+			<pubDate>Tue, 10 Oct 2023</pubDate>
+			<description>
+				<![CDATA[
+				<!doctype html>
+				<html>
+					<head>
+						<title>Terminal Based 3D Graphics</title>
+					</head>
+					<body>
+						<h1><a href="https://eggbert.neocities.org/blogs/terminal_based_3d_graphics.html">Terminal Based 3D Graphics</a></h1>
+					</body>
+				</html>
+					]]>
+			</description>
+		</item>
+
+		<item>
+			<title>Introduction</title>
+			<guid>https://eggbert.neocities.org/blogs/introduction.html</guid>
+			<link>https://eggbert.neocities.org/blogs/introduction.html</link>
+			<pubDate>Sun, 14 Jan 2024</pubDate>
+			<description>
+				<![CDATA[
+				<!doctype html>
+				<html>
+					<head>
+						<title>Introduciton</title>
+					</head>
+					<body>
+						<h1><a href="https://eggbert.neocities.org/blogs/introduction.html">Introducion</a></h1>
+					</body>
+				</html>
+				]]>
+			</description>
+		</item>
+
+		<item>
+			<title>Wolfenstein Terminal Raycaster</title>
+			<guid>https://eggbert.neocities.org/blogs/wolfenstein_terminal_raycaster.html</guid>
+			<link>https://eggbert.neocities.org/blogs/wolfenstein_terminal_raycaster.html</link>
+			<pubDate>IDK</pubDate>
+			<description>
+				<![CDATA[
+				<!doctype html>
+				<html>
+					<head>
+						<title>Wolfenstein Teriminal Raycaster</title>
+					</head>
+					<body>
+						<h1><a href="https://eggbert.neocities.org/blogs/wolfenstein_terminal_raycaster.html">Wolfenstein Terminal Raycaster</a></h1>
+					</body>
+				</html>
+				]]>
+			</description>
+		</item>
+
+		<item>
+			<title>Neocities</title>
+			<guid>https://eggbert.neocities.org/blogs/neocities.html</guid>
+			<link>https://eggbert.neocities.org/blogs/neocities.html</link>
+			<pubDate>Fri, 3 Mar 2024</pubDate>
+			<description>
+				<![CDATA[
+				<!doctype html>
+				<html>
+					<head>
+						<title>Neocities</title>
+					</head>
+					<body>
+						<h1><a href="https://eggbert.neocities.org/blogs/neocities.html">Neocities</a></h1>
+					</body>
+				</html>
+				]]>
+			</description>
+		</item>
+	</channel>
+</rss>
+
+<!-- <item> -->
+<!-- 	<title>Title</title> -->
+<!-- 	<guid>https://eggbert.neocities.org/blogs/path.html</guid> -->
+<!-- 	<link>https://eggbert.neocities.org/blogs/path.html</link> -->
+<!-- 	<pubDate>Sun, 14 Jan 2024</pubDate> -->
+<!-- 	<description> -->
+<!-- 		<![CDATA[ -->
+<!-- 		<!doctype html> -->
+<!-- 		<html> -->
+<!-- 			<head> -->
+<!-- 				<title>Title</title> -->
+<!-- 			</head> -->
+<!-- 			<body> -->
+<!-- 				<h1><a href="https://eggbert.neocities.org/blogs/path.html">Title</a></h1> -->
+<!-- 			</body> -->
+<!-- 		</html> -->
+<!-- 		]]> -->
+<!-- 	</description> -->
+<!-- </item> -->
