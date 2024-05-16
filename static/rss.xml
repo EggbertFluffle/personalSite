@@ -86,6 +86,25 @@
 				]]>
 			</description>
 		</item>
+		<item>
+			<title>Minecraft Clone</title>
+			<guid>https://eggbert.neocities.org/blogs/minecraft_clone.html</guid>
+			<link>https://eggbert.neocities.org/blogs/minecraft_clone.html</link>
+			<pubDate>Tue, 16 May 2024</pubDate>
+			<description>
+				<![CDATA[
+				<!doctype html>
+				<html>
+					<head>
+						<title>Minecraft Clone</title>
+					</head>
+					<body>
+						<h1><a href="https://eggbert.neocities.org/blogs/path.html">Minecraft Clone</a></h1>
+					</body>
+				</html>
+				]]>
+			</description>
+		</item>
 	</channel>
 </rss>
 

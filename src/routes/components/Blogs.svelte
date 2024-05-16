@@ -9,6 +9,7 @@
 		<li>01/14/2024: <a href="/blogs/introduction">Introduction</a></li>
 		<li>TT/BB/DDDD: <a href="/blogs/wolfenstein_terminal_raycaster">Wolfenstein-style Terminal Raycast Renderer</a></li>
 		<li>03/22/2024: <a href="/blogs/neocities">Neocities</a></li>
+		<li>05/09/2024: <a href="/blogs/minecraft_clone">Minecraft Clone (maybe pt.1)</a></li>
 	</ul>
 </div>
 

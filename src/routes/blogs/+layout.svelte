@@ -47,7 +47,7 @@
 
 	main :global(h2) {
 		color: var(--green);
-		font-size: 2em;
+		font-size: 2.25em;
 	}
 
 	main :global(h2)::before {
@@ -56,9 +56,8 @@
 	}
 
 	main :global(p) {
-		text-indent: 2em;
 		margin-block: 0.75rem;
-		line-height: 1.75rem;
+		line-height: 1.8rem;
 	}
 
 	main :global(a) {
