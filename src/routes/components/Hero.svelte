@@ -26,18 +26,12 @@
 </div>
 
 <style>
-	@font-face {
-		font-family: 'MonaspaceKR';
-		font-style: normal;
-		src: url('/fonts/MonaspiceKrNerdFont-Regular.otf');
-	}
-
 	.hero {
 		display: flex;
 		align-items: center;
 		min-width: 100mvw;
 		min-height: 100vh;
-		font-family: MonaspaceKr, monospace;
+		font-family: MonaspaceKr, Iosevka, monospace;
 	}
 
 	h1 {

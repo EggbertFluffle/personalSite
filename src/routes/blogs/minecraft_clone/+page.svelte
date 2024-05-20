@@ -25,7 +25,7 @@
 </ol>
 <h2 id="world-data-pt-1-">World Data (pt.1)</h2>
 <p>The first and easiest bit to tackle was the creation of rendered blocks, and to do this I started by just creating a simple block struct that held some data. In my thinking, I wanted to hold the least amount of data possible for each block, and tried to make it&#39;s footprint as small as possible. I&#39;ll talk about the faces member variable later, but the others are pretty self explanatory, though they were modified later to be more efficient (as of now I&#39;m being punished for fixing something that already worked as the entire simulation is bugged because of my memory greed T-T).</p>
-<pre><code class="lang-c++"><span class="hljs-comment">//    Block.hpp</span>
+<pre><code class="lang-c++"><span class="hljs-comment">// Block.hpp</span>
 
 <span class="hljs-keyword">struct</span> Block &lbrace;
 <span class="hljs-built_in">std</span>::stirng texture; <span class="hljs-comment">// Texture name for block</span>
@@ -106,3 +106,10 @@ Block(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</s
 </code></pre>
 <p>There was some more moving parts to the real makefile, but this is main attraction, where I essentially tell make that if it needs any sort of object file that isn&#39;t already compiled into an object file, go compile just that file and continue. What this also allows is the skipping of compiling files that have not changed since the last run of make. Finally, a friend of mine <a href="https://squi.bid">squibid</a> suggested I use the shell command <code>pkg-config --libs --cflags glfw3</code> so that I could get the proper names of the library files I had to link to. This removed the need for me to change the makefile weather I was programming on my desktop running Void Linux, or my Chromebook running Debian, which both have different names for the glfw library files. This improved the workflow tremendously and I would have burn out of this project far sooner if I hadn&#39;t taken the time to at least learn the basics.</p>
 <p>The other lifesaver for this project was gdb or the GNU Project Debugger. This tool allows me to add a <code>-g</code> flag to my <code>g++</code> call and add debug information to the executable. Then running gdb on the file allows me to run the file until I reach a segmentation fault. The magic happens when I run <code>backtrace</code> which then gives me the call stack before my code went wrong. THIS!!! THIS GODSEND GIFT SAVED ME HOURS!!! Before gdb, I used to just comment out code until I didn&#39;t get segfaults, then try to puzzle out the issue, only to get a completely unrelated segfault right afterwards. I still get them quite often and were huge demotivators in the development of Mingleburb but you live and you learn. Either way I want to become more familiar with gdb in the future as it seems to have a lot of really useful features like being able to see the values of local variables, step through instructions, view Assembly outputs and use breakpoints in code.</p>
+<h2 id="gallery">Gallery</h2>
+<p>Some simple terrain generation using basic perlin noise.</p>
+<img src="../images/minecraft_clone_basic_terrain.png" alt="me showing a 3d voxel terrain"/>
+<p>Differnt textured blocks can be rendered with each other. A sea of pink wool with some islands made of wood.</p>
+<img src="../images/minecraft_clone_mixed_pink_sea.png" alt="me showing that multiple blocks can be used simoltaneously"/>
+<p>Blocks are culled everywhere a player shouldn't be able to see, in between two blocks, from the void of the world.</p>
+<img src="../images/minecraft_clone_proof_of_culling.png" alt="me showing the culling of faces the player wouldn't normally be able to see"/>

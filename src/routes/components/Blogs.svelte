@@ -15,6 +15,10 @@
 
 
 <style>
+	* {
+		font-family: Iosevka, monospace;
+	}
+
 	div {
 		color: var(--foreground);
 		margin-inline: 15%;

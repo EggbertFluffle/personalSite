@@ -6,13 +6,17 @@
 	<h2>&lt;<span>Contact</span>&gt;</h2>
 	<ul>
 		<li>Github: <a href="https://github.com/EggbertFluffle/">EggbertFluffle</a></li>
-		<li>E-Mail: <a href="mailto:hdiambrosio@gmail.com">hdiambrosio@gmail.com</a></li>
+		<li>E-Mail: hdiambrosio@gmail.com</li>
 		<li>LinkedIn: <a href="https://www.linkedin.com/in/harrison-diambrosio-505443229/">Harrison DiAmbrosio</a></li>
 	</ul>
 </div>
 
 
 <style>
+	* {
+		font-family: Iosevka, monospace;
+	}
+
 	div {
 		color: var(--foreground);
 		margin-inline: 15%;

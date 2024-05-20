@@ -11,6 +11,10 @@
 </select>
 
 <style>
+	* {
+		font-family: Iosevka, monospace;
+	}
+
 	select {
 		position: absolute;
 		right: 0px;

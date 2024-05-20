@@ -26,12 +26,12 @@
 		padding-block: 5%;
 		background-color: var(--background1);
 		min-height: 100vmin;
-		font-size: 24px;
+		font-size: 22px;
 	}
 
 	main :global(*) {
 		color: var(--foreground);
-		font-family: sans-serif;
+		font-family: Iosevka, monospace;
 	}
 
 	main :global(h1) {
@@ -57,7 +57,7 @@
 
 	main :global(p) {
 		margin-block: 0.75rem;
-		line-height: 1.8rem;
+		line-height: 2rem;
 	}
 
 	main :global(a) {
@@ -127,6 +127,10 @@
 			font-size: 2rem;
 			text-align: center;
 		}
+	}
+
+	main :global(img) {
+		width: 100%;
 	}
 
 	main :global(.hljs),
