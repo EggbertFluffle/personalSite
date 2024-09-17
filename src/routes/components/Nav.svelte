@@ -6,6 +6,7 @@
 	<a href="#whoAmI">{"<"}<span style="color: {$currentTheme.green}">WhoAmI</span>{">"}</a>
 	<a href="#blog">{"<"}<span style="color: {$currentTheme.orange}">Blog</span>{">"}</a>
 	<!-- <a href="/">{"<"}<span style="color: {$currentTheme.yellow}">Projects</span>{">"}</a> -->
+	<a href="#community">{"<"}<span style="color: {$currentTheme.purple}">Community</span>{">"}</a>
 	<a href="#contact">{"<"}<span style="color: {$currentTheme.cyan}">Contact</span>{">"}</a>
 </nav>
 

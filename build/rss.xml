@@ -4,13 +4,13 @@
 		<title>Eggbert's Blog</title>
 		<description>A personal blog about all things computers, tech, and science.</description>
 		<language>en-us</language>
-		<link>http://eggbert.neocities.org/rss.xml</link>
-		<atom:link href="http://eggbert.neocities.org/rss.xml" rel="self" type="application/rss+xml" />
+		<link>http://eggbertfluffle.github.io/rss.xml</link>
+		<atom:link href="http://eggbertfluffle.github.io/rss.xml" rel="self" type="application/rss+xml" />
 
 		<item>
 			<title>Terminal Based 3D Graphics</title>
-			<guid>https://eggbert.neocities.org/blogs/terminal_based_3d_graphics.html</guid>
-			<link>https://eggbert.neocities.org/blogs/terminal_based_3d_graphics.html</link>
+			<guid>https://eggbertfluffle.github.io/blogs/terminal_based_3d_graphics</guid>
+			<link>https://eggbertfluffle.github.io/blogs/terminal_based_3d_graphics</link>
 			<pubDate>Tue, 10 Oct 2023</pubDate>
 			<description>
 				<![CDATA[
@@ -20,7 +20,7 @@
 						<title>Terminal Based 3D Graphics</title>
 					</head>
 					<body>
-						<h1><a href="https://eggbert.neocities.org/blogs/terminal_based_3d_graphics.html">Terminal Based 3D Graphics</a></h1>
+						<h1><a href="https://eggbertfluffle.github.io/blogs/terminal_based_3d_graphics">Terminal Based 3D Graphics</a></h1>
 					</body>
 				</html>
 					]]>
@@ -29,8 +29,8 @@
 
 		<item>
 			<title>Introduction</title>
-			<guid>https://eggbert.neocities.org/blogs/introduction.html</guid>
-			<link>https://eggbert.neocities.org/blogs/introduction.html</link>
+			<guid>https://eggbertfluffle.github.io/blogs/introduction</guid>
+			<link>https://eggbertfluffle.github.io/blogs/introduction</link>
 			<pubDate>Sun, 14 Jan 2024</pubDate>
 			<description>
 				<![CDATA[
@@ -40,7 +40,7 @@
 						<title>Introduciton</title>
 					</head>
 					<body>
-						<h1><a href="https://eggbert.neocities.org/blogs/introduction.html">Introducion</a></h1>
+						<h1><a href="https://eggbertfluffle.github.io/blogs/introduction">Introducion</a></h1>
 					</body>
 				</html>
 				]]>
@@ -49,8 +49,8 @@
 
 		<item>
 			<title>Wolfenstein Terminal Raycaster</title>
-			<guid>https://eggbert.neocities.org/blogs/wolfenstein_terminal_raycaster.html</guid>
-			<link>https://eggbert.neocities.org/blogs/wolfenstein_terminal_raycaster.html</link>
+			<guid>https://eggbertfluffle.github.io/blogs/wolfenstein_terminal_raycaster</guid>
+			<link>https://eggbertfluffle.github.io/blogs/wolfenstein_terminal_raycaster</link>
 			<pubDate>IDK</pubDate>
 			<description>
 				<![CDATA[
@@ -60,17 +60,16 @@
 						<title>Wolfenstein Teriminal Raycaster</title>
 					</head>
 					<body>
-						<h1><a href="https://eggbert.neocities.org/blogs/wolfenstein_terminal_raycaster.html">Wolfenstein Terminal Raycaster</a></h1>
+						<h1><a href="https://eggbertfluffle.github.io/blogs/wolfenstein_terminal_raycaster">Wolfenstein Terminal Raycaster</a></h1>
 					</body>
 				</html>
 				]]>
 			</description>
 		</item>
-
 		<item>
 			<title>Neocities</title>
-			<guid>https://eggbert.neocities.org/blogs/neocities.html</guid>
-			<link>https://eggbert.neocities.org/blogs/neocities.html</link>
+			<guid>https://eggbertfluffle.github.io/blogs/neocities</guid>
+			<link>https://eggbertfluffle.github.io/blogs/neocities</link>
 			<pubDate>Fri, 3 Mar 2024</pubDate>
 			<description>
 				<![CDATA[
@@ -80,7 +79,7 @@
 						<title>Neocities</title>
 					</head>
 					<body>
-						<h1><a href="https://eggbert.neocities.org/blogs/neocities.html">Neocities</a></h1>
+						<h1><a href="https://eggbertfluffle.github.io/blogs/neocities">Neocities</a></h1>
 					</body>
 				</html>
 				]]>
@@ -88,8 +87,8 @@
 		</item>
 		<item>
 			<title>Minecraft Clone</title>
-			<guid>https://eggbert.neocities.org/blogs/minecraft_clone.html</guid>
-			<link>https://eggbert.neocities.org/blogs/minecraft_clone.html</link>
+			<guid>https://eggbertfluffle.github.io/blogs/minecraft_clone</guid>
+			<link>https://eggbertfluffle.github.io/blogs/minecraft_clone</link>
 			<pubDate>Tue, 16 May 2024</pubDate>
 			<description>
 				<![CDATA[
@@ -99,7 +98,45 @@
 						<title>Minecraft Clone</title>
 					</head>
 					<body>
-						<h1><a href="https://eggbert.neocities.org/blogs/path.html">Minecraft Clone</a></h1>
+						<h1><a href="https://eggbertfluffle.github.io/blogs/minecraft_clone">Minecraft Clone</a></h1>
+					</body>
+				</html>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Linux on a Laptop: My Experience (pt.1)</title>
+			<guid>https://eggbertfluffle.github.io/blogs/linux_on_a_laptop_pt1.html</guid>
+			<link>https://eggbertfluffle.github.io/blogs/linux_on_a_laptop_pt1.html</link>
+			<pubDate>Sun, 2 Jun 2024</pubDate>
+			<description>
+				<![CDATA[
+				<!doctype html>
+				<html>
+					<head>
+						<title>Linux on a Laptop: My Experience (pt.1)</title>
+					</head>
+					<body>
+						<h1><a href="https://eggbertfluffle.github.io/blogs/linux_on_a_laptop_pt1.html">Linux on a Laptop: My Experience (pt.1)</a></h1>
+					</body>
+				</html>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Linux on a Laptop: My Experience (pt.2)</title>
+			<guid>https://eggbertfluffle.github.io/blogs/linux_on_a_laptop_pt2.html</guid>
+			<link>https://eggbertfluffle.github.io/blogs/linux_on_a_laptop_pt2.html</link>
+			<pubDate>Sun, 8 Sep 2024</pubDate>
+			<description>
+				<![CDATA[
+				<!doctype html>
+				<html>
+					<head>
+						<title>Linux on a Laptop: My Experience (pt.2)</title>
+					</head>
+					<body>
+						<h1><a href="https://eggbertfluffle.github.io/blogs/linux_on_a_laptop_pt2.html">Linux on a Laptop: My Experience (pt.2)</a></h1>
 					</body>
 				</html>
 				]]>
@@ -109,19 +146,19 @@
 </rss>
 
 <!-- <item> -->
-<!-- 	<title>Title</title> -->
-<!-- 	<guid>https://eggbert.neocities.org/blogs/path.html</guid> -->
-<!-- 	<link>https://eggbert.neocities.org/blogs/path.html</link> -->
-<!-- 	<pubDate>Sun, 14 Jan 2024</pubDate> -->
+<!-- 	<title>{TITLE}</title> -->
+<!-- 	<guid>https://eggbertfluffle.github.io/blogs/{PATH_TO_BLOG}.html</guid> -->
+<!-- 	<link>https://eggbertfluffle.github.io/blogs/{PATH_TO_BLOG}.html</link> -->
+<!-- 	<pubDate>{DAY_OF_THE_WEEK}, {DAY} {MONTH} {YEAR}</pubDate> -->
 <!-- 	<description> -->
 <!-- 		<![CDATA[ -->
 <!-- 		<!doctype html> -->
 <!-- 		<html> -->
 <!-- 			<head> -->
-<!-- 				<title>Title</title> -->
+<!-- 				<title>{TITLE}</title> -->
 <!-- 			</head> -->
 <!-- 			<body> -->
-<!-- 				<h1><a href="https://eggbert.neocities.org/blogs/path.html">Title</a></h1> -->
+<!-- 				<h1><a href="https://eggbertfluffle.github.io/blogs/{PATH_TO_BLOG}.html">{TITLE}</a></h1> -->
 <!-- 			</body> -->
 <!-- 		</html> -->
 <!-- 		]]> -->

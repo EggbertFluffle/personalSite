@@ -6,7 +6,8 @@
 	<h2>&lt;<span>Contact</span>&gt;</h2>
 	<ul>
 		<li>Github: <a href="https://github.com/EggbertFluffle/">EggbertFluffle</a></li>
-		<li>E-Mail: hdiambrosio@gmail.com</li>
+		<li>E-Mail (personal): hdiambrosio@gmail.com</li>
+		<li>E-Mail (school): hadiambrosio@wpi.edu</li>
 		<li>LinkedIn: <a href="https://www.linkedin.com/in/harrison-diambrosio-505443229/">Harrison DiAmbrosio</a></li>
 	</ul>
 </div>

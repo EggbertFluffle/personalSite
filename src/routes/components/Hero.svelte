@@ -36,7 +36,7 @@
 
 	h1 {
 		padding: 0px;
-		font-size: 11.45vw;
+		font-size: 10vw;
 		color: var(--foreground);
 		flex-grow: 1;
 	}
