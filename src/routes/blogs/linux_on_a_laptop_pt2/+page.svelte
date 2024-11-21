@@ -46,7 +46,7 @@ Finally, I found it easy to change the provided battery module to also indicate 
 <p>This isn&#39;t all the key-binds. For example, I had to bind my volume controls to Mod+Shift plus left square bracket and right square bracket with a backslash as mute. Then to change the brightness of the backlight, I use just Mod and the same controls. These are the types of compromises using a custom Linux rice requires, but luckily, they don&#39;t get in my way much, if at all.</p>
 <p>But with this territory comes the slight annoyance of not being able to just give someone else your laptop, and they&#39;re familiar with what they&#39;re looking at. Using a web browser is about as compliant as it gets to operating another computer. I don&#39;t have to give my laptop to others often though, or maybe I haven&#39;t been at school long enough to need to.</p>
 <h2 id="gallery">Gallery</h2>
-<p>On the left is a little minecraft clone that I made. I talked about it <a href="/blogs/minecraft_clone">here</a>. I also have random pokemon appear in my shell with a program called pokemon show, which I think I found with pip.</p>
+<p>On the bottom left is bluetuith, the Bluetooth connections manager thing I use</p>
 <p><img src="../images/general_void_dwm_desktop.png" alt="dwm void linux desktop with w minecraft code"></p>
-<p>On the bottome left is bluetuith, the Bluetooth connections manager thing I use</p>
+<p>On the left is a little minecraft clone that I made. I talked about it <a href="/blogs/minecraft_clone">here</a>. I also have random pokemon appear in my shell with a program called pokemon show, which I think I found with pip.</p>
 <p><img src="../images/coding_pokemon_void_desktop.png" alt="dwm void linux dekstop with soe terminals open"></p>

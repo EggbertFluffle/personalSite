@@ -231,4 +231,9 @@
 	{
 		font-weight: bold;
 	}
+
+	main :global(blockquote) {
+		margin: 2rem;
+		font-style: italic;
+	}
 </style>

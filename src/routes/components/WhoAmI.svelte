@@ -10,7 +10,6 @@
 		<li><a target="_blank" href="https://github.com/EggbertFluffle/nvim"><strong>Neovim</strong></a> - Text editor and the only way I can type now. If I need to use another editor vim binds are a requirement, without question. Package management is done with <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a> which makes the whole configuration process super portable.</li>
 		<li><a target="_blank" href="https://voidlinux.org/"><strong>Linux (Void, Debian)</strong></a> - My choice for linux distros. Mostly used out of recommendation (or no other option). As for Void, I do appreciate the minimalism and boot speed. Debian is nice and simple as well, and if not for the outdated repos, it would be my favorite.</li>
 		<li><a target="_blank" href="https://dwm.suckless.org/"><strong>dwm</strong></a> - Window manager of choice. Tough, efficient, and I love how the config is written in C. As for complementary programs, the only one that adds any functionality besides comsetics is <a href="https://tools.suckless.org/slstatus/">slstatus</a>.</li>
-		<li><a target="_blank" href="https://github.com/saysjonathan/dwm.tmux"><strong>dwm.tmux</strong></a> - I use tmux for when I'm on my school chromebook or not in a graphical environment with tiling window management. This nice plugin makes it easy to get keybinds similar to dwm and it's a nice set-and-forget.</li>
 		<li><a target="_blank" href="https://github.com/tsoding/boomer"><strong>boomer</strong></a> - A zooming utility for Linux built in Nim. Super satisfying to use and love the easing when zooming. Also, pround to support <a href="https://www.youtube.com/@TsodingDaily">Tsoding's videos</a>. Good ol' entertainment.</li>
 		<!-- <li><a target="_blank" href="LINK"><strong>NAME</strong></a> - </li> -->
 		<!-- Template list item -->
@@ -29,7 +28,7 @@
 	}
 
 	h2 {
-		font-size: 6rem;
+		font-size: 5rem;
 	}
 
 	h2 > span {
@@ -37,14 +36,15 @@
 	}
 
 	h3 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		margin-block: 1rem;
+		margin-inline: 1rem;
 	}
 
 	p {
 		text-indent: 5rem;
-		font-size: 1.75rem;
-		margin-inline: 5rem;
+		font-size: 1.25rem;
+		margin-inline: 2.5rem;
 	}
 
 	em > span {
@@ -52,7 +52,7 @@
 	}
 
 	ul {
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 		margin-inline: 5rem;
 	}
 
@@ -75,24 +75,27 @@
 
 		h2 {
 			margin-top: 2rem;
-			font-size: 4rem;
+			font-size: 3rem;
 			text-align: center;
 		}
 
 		p {
 			text-indent: 2rem;
-			font-size: 1.25rem;
-			margin: 2rem;
+			font-size: 1rem;
+			margin-inline: 2rem;
+			margin-block: 1rem;
 		}
 
 		h3 {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			text-align: center;
 		}
 
 		ul {
-			font-size: 1.25rem;
+			font-size: 1rem;
 			margin: 2rem;
+			margin-inline: 2rem;
+			margin-block: 1rem;
 			list-style: none;
 			text-indent: 1rem;
 		}

@@ -25,12 +25,12 @@
 
 	h2 {
 		margin-top: 2rem;
-		font-size: 6rem;
+		font-size: 5rem;
 	}
 
 	ul {
 		margin-inline: 5rem;
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 		list-style: none;
 	}
 
@@ -57,7 +57,7 @@
 
 		h2 {
 			margin-top: 2rem;
-			font-size: 4rem;
+			font-size: 3rem;
 			text-align: center;
 		}
 

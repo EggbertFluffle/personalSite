@@ -24,6 +24,7 @@
 		border-color: var(--red);
 		border-radius: 0px;
 		padding: 0.15rem;
+		text-align: right;
 	}
 
 	select:after {

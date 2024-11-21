@@ -11,8 +11,7 @@
 		"SebastianLague",
 		"Kofybrek",
 		"jdh",
-		"TheCodingTrain",
-		"ItzBirb2"
+		"TheCodingTrain"
 	];
 </script>
 
@@ -27,6 +26,7 @@
 	<ul>
 		<li><a href="https://lunarflamestudios.com/">LunarFlame Studios</a> - Independant game dev team responsible for  the endlessly entertaining <a href="https://lunarflamestudios.com/pages/project-leo.php">Project Leo</a>. A fantastic game and team.</li>
 		<li><a href="https://squi.bid">Squibid</a> - Personal projects, blogs from the one, the only, Squibid.</li>
+		<li><a href="https://onocu.com">_Orange</a> - Three oranges in a trench coat, and great tea connoisseur.</li>
 	</ul>
 </div>
 
@@ -43,18 +43,19 @@
 
 	h2 {
 		margin-top: 2rem;
-		font-size: 6rem;
+		font-size: 5rem;
 	}
 
 
 	h3 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		margin-block: 1rem;
+		margin-inline: 1rem;
 	}
 
 	ul {
 		margin-inline: 5rem;
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 		list-style: none;
 	}
 
@@ -66,7 +67,7 @@
 		color: var(--foreground);
 		margin-inline: 5rem;
 		display: inline-block;
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 	}
 
 	.favorites-delimiter {
@@ -96,7 +97,7 @@
 
 		h2 {
 			margin-top: 2rem;
-			font-size: 4rem;
+			font-size: 3rem;
 			text-align: center;
 		}
 
@@ -106,7 +107,7 @@
 		}
 
 		ul {
-			font-size: 1.25rem;
+			font-size: 1rem;
 			margin-inline: 2rem;
 		}
 
@@ -114,11 +115,11 @@
 			margin-inline: 1rem;
 			display: inline-block;
 			text-align: center;
-			font-size: 1.25rem;
+			font-size: 1rem;
 		}
 
 		li {
-			text-indent: 1rem;
+			text-indent: 2rem;
 		}
 
 		.favorites-delimiter {
