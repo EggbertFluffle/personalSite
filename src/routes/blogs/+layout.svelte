@@ -2,14 +2,32 @@
 	import { currentTheme } from "../themes.js";
 	import { onMount } from "svelte";
 	import hljs from "highlight.js/lib/core";
+
 	import typescript from "highlight.js/lib/languages/typescript";
+	import cpp from "highlight.js/lib/languages/cpp";
+
     import ThemePicker from "../components/ThemePicker.svelte";
 
 	hljs.registerLanguage("typescript", typescript);
+	hljs.registerLanguage("c++", cpp);
 	onMount(() => {
 		const codeElements = document.getElementsByTagName("code");
+
 		for(let i = 0; i < codeElements.length; i++) {
-			codeElements[i].innerHTML = hljs.highlight(codeElements[i].innerText, { language: "typescript" }).value;
+			let highlights;
+			console.log(codeElements[i].classList.values().toArray());
+			switch(codeElements[i].classList.values().toArray()[0]) {
+				case "lang-c++":
+					highlights = hljs.highlight(codeElements[i].innerText, { language: "cpp" }).value;
+					break;
+				case "language-typescript":
+					highlights = hljs.highlight(codeElements[i].innerText, { language: "typescript" }).value;
+					break;
+				default:
+					highlights = codeElements[i].innerText;
+					break;
+			}
+			codeElements[i].innerHTML = highlights;
 		};
 	});
 </script>
@@ -53,6 +71,11 @@
 	main :global(h2)::before {
 		content: "## ";
 		color: var(--grey);
+	}
+
+	main :global(h3) {
+		font-size: 1.5em;
+		margin-top: 1rem;
 	}
 
 	main :global(p) {

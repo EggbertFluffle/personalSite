@@ -12,6 +12,13 @@
 	});
 </script>
 
+<title>Minecraft Clone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover the journey of building a Minecraft clone using C++ and OpenGL, including insights on graphics programming, terrain generation, and face culling."/>
+<meta name="keywords" content="Minecraft clone, C++, OpenGL, graphics programming, Perlin noise, game development, face culling, block rendering, debugging in C++, gdb, makefile"/>
+<meta name="author" content="Harrison DiAmbrosio"/>
+
 <h1 id="minecraft-clone">Minecraft Clone</h1>
 <p>Honestly I&#39;m surprise I haven&#39;t created something of a Minecraft clone already. I originally just wanted to play around with more in depth graphics programming (in 3D specifically) and prior to this I had only ever used <a href="https://processing.org/">Processing</a> and <a href="https://p5js.org/">p5.js</a>&#39;s 3D rendering capabilities, as well as <a href="https://threejs.org/">Three.js</a> for a cool basic online multiplayer game. Obviously these come with the benefits of JavaScript, but sadly,they also come with the drawbacks of JavaScript (or Java in the case of Processing). Because of this and a desire to improve my handle on the C++ standard lib, STL and language in general, I decided between OpenGL or Vulkan, which led me to pick OpenGL almost arbitrarily. I&#39;ve heard a lot about the two previously, and from my limited research I found that Vulkan was more &quot;low-level&quot; than OpenGL and therefore could get more performance squeezed out of it, but still it was harder and this was my first time being in the weeds of graphics programming, so I thought I&#39;d make things easy for myself and switch later if I felt I needed to.</p>
 <p>At this point, the people of reddit praised <a href="https://learnopengl.com/">learnopengl.org</a> so I followed it&#39;s tutorials, and would recommend it, or it&#39;s physical bool version, to anyone interested in dipping their toes. Either way, I got through the basics of rendering and started to figure out how I would put together a little Minecraft simulation, which I ended up deciding to call <a href="https://github.com/EggbertFluffle/Mingleburb">Mingleburb</a> for no reason other than I thought it was funny.</p>

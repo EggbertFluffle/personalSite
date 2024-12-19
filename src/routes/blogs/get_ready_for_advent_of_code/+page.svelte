@@ -1,3 +1,13 @@
+<title>Why Advent of Code is the Best Holiday Tradition for Programmers</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="Why Advent of Code is the Best Holiday Tradition for Programmers">
+<meta name="description" content="Discover why Advent of Code is a beloved holiday tradition for programmers. Learn about its fun puzzles, unique storytelling, and how it fosters problem-solving and community spirit.">
+<meta name="keywords" content="Advent of Code, programming puzzles, coding challenges, holiday programming, learn programming, problem-solving, coding competition, Eric Wastl, AoC community, coding traditions">
+<meta name="author" content="Harrison DiAmbrosio">
+<meta name="robots" content="index, follow">
+
 <h1 id="get-ready-for-advent-of-code">Get Ready For Advent Of Code</h1>
 <p>As we get closer to December 1st, many families get themselves into the Christmas spirit. One way I intend to celebrate until I die, is with <a href="https://adventofcode.com/">Advent of Code</a>. One of my favorite holiday traditions and pastimes in general. I find it relaxing, incredibly satisfactory and a good conversation starter when talking with other programmers at school. I intend to just speak to a couple of challenges that I ran into and why <a href="https://adventofcode.com/">Advent of Code</a> is such a beautiful thing! </p>
 <h2 id="-the-pitch-">&quot;The Pitch&quot;</h2>

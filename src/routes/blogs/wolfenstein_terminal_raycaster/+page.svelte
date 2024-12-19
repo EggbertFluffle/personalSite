@@ -27,7 +27,7 @@
 <h2 id="first-steps">First Steps</h2>
 <p>Again, no platform specifics, just the math, but first I initialize ncurses and some other important settings inside of ncurses for control handling. At the moment, w, a, s, and d are for strafing; t changes the texturing method, which I will touch more on later, m toggles mouse support for the camera; and j and k swivel the camera. Finally, because 2D raycasters are actually 2D, pressing p switches between the perspectives: the top-down map and the actual 3D projected view. Although the top down is very useful for debugging, the 3D perspective is the real prize. </p>
 <p>Here is the map I will be working with. Anything that is not a zero is a wall, the number of each wall comes in later for texturing. </p>
-<pre><code class="language-c++">std::vector&lt;int&gt; map = &lbrace;
+<pre><code class="lang-c++">std::vector&lt;int&gt; map = &lbrace;
     1, 2, 1, 2, 1, 2,
     2, 0, 0, 0, 0, 1,
     1, 0, 3, 0, 0, 2,
@@ -37,7 +37,7 @@
 &rbrace;;
 </code></pre>
 <p>First comes the initial calls to cast rays, as well as collect their distances and a few other bits of data. </p>
-<pre><code class="language-c++">// width is the screen width
+<pre><code class="lang-c++">// width is the screen width
 int lines = width;
 std::vector&lt;float&gt; distances(lines);
 
@@ -51,7 +51,7 @@ std::vector&lt;float&gt; uTexCoords(lines);
 player.TakePerspective(&amp;distances, &amp;hits, &amp;uTexCoords, &amp;map, &amp;scl, &amp;mapWidth, &amp;mapHeight);
 </code></pre>
 <p>And <code>player::TakePerspectives</code> simply casts a ray for each pixel in the width of the screen and linearly interpolates (lerps) through the players field of view (FOV) to create evenly spaced angle for each ray to travel at. This creates a fan of rays centered around the player&#39;s angle, or heading. There is also a lot of important map data we pass to almost all of the functions called, those being <code>scl</code>, the size of each cell in the map grid, and <code>map</code>, <code>mapWidth</code>, and <code>mapHeight</code>.</p>
-<pre><code class="language-c++">void Player::TakePerspective(std::vector&lt;float&gt;* distances, std::vector&lt;int&gt;* hits, std::vector&lt;float&gt;* uTexCoords, std::vector&lt;int&gt;* map, const float* scl, const int* mapWidth, const int* mapHeight) &lbrace;
+<pre><code class="lang-c++">void Player::TakePerspective(std::vector&lt;float&gt;* distances, std::vector&lt;int&gt;* hits, std::vector&lt;float&gt;* uTexCoords, std::vector&lt;int&gt;* map, const float* scl, const int* mapWidth, const int* mapHeight) &lbrace;
     for(int i = 0; i &lt; distances-&gt;size(); i++) &lbrace;
         distances-&gt;at(i) = RayCast(
             hits-&gt;at(i), uTexCoords-&gt;at(i),

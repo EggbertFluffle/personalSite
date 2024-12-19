@@ -1,3 +1,10 @@
+<meta charset="UTF-8">
+<meta name="title" content="What Are Neocities?">
+<meta name="description" content="Discover Neocities, a platform reviving the internet's retro tradition of personal websites. Learn about its features, social aspects, and unique tools like 88x31 buttons, guest books, and webrings.">
+<meta name="keywords" content="Neocities, retro websites, personal websites, static hosting, 88x31 buttons, guest books, webrings, internet communities, independent web design, HTML, CSS, JavaScript">
+<meta name="author" content="Harrison DiAmbrosio">
+<meta name="robots" content="index, follow">
+
 <h1 id="what-are-neocities">What are Neocities</h1>
 <p>For the past couple of days, I have been sifting through the internet&#39;s oldest tradition, neocities. Essentially, neocities is just a bunch of retro, internet personal websites that people make to talk about themselves, share gifs, show art, blog, connect with others, and honestly anything imaginable. Most of the time these sites are completely static and I usually find sites through <a href="https://neocities.org/">neocities.org</a>. Neocities the site offers static hosting for free (while the site stays under 1GB of storage). This is great because I can host my site on neocities at <a href="https://eggbert.neocities.org">eggbert.neocities.org</a> for completely free. This is great and feels similar to GitHub pages and they also offer <a href="https://neocities.org/tutorials">tutorials</a> for things like HTML, CSS, and JavaScript that could prove useful to anyone interested in building their little corner of the internet.</p>
 <h2 id="social-aspect">Social aspect</h2>

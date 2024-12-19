@@ -1,3 +1,12 @@
+<title>Wolfenstein Terminal Raycaster</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="Wolfenstein Terminal Raycaster">
+<meta name="description" content="Explore the creation of a Wolfenstein 3D-style renderer in a terminal-based Text User Interface (TUI) using ncurses and C++. Learn about 2D raycasting math, performance techniques, and rendering principles.">
+<meta name="keywords" content="Wolfenstein 3D, terminal raycaster, 2D raycasting, ncurses, TUI rendering, C++ graphics, game development, raycasting algorithm, retro games, terminal-based applications">
+<meta name="author" content="Harrison DiAmbrosio">
+<meta name="robots" content="index, follow">
+
 <h1 id="tui-3d-graphics">TUI 3D Graphics</h1>
 <p>Three-dimensional graphics are the best thing since 2D graphics, but also many times harder. I&#39;ve wanted to break into 3D graphics for a while now, namely because of its connection to first-person games like Minecraft or the Call of Duty franchise. But after some surface-level digging, I&#39;ve found there is a lot more to the third dimension than I first thought.</p>
 <p>Put simply, in 2D graphics, there are pixels in a grid, and that&#39;s it. From there, all you need to do is manipulate those very pixels to look like whatever your heart desires. And at its core, 3D graphics is no different than 2D graphics. It&#39;s still a 2D grid of pixels that you manipulate to look a certain way. The tricky part is that you need to give the illusion of a 3D space with only 2D tools.</p>
@@ -5,13 +14,13 @@
 <p>At its core, EggTUI is just an extremely bare-bones terminal-based 2D graphics &quot;framework&quot;. That said it also can (drum roll) display the first 2 platonic solids... spinning! This came later after I realized that with a terrible line drawing algorithm, I could draw some terrible 3D shapes. So what exactly can EggTUI do? It can display lines, triangles, quads, tetrahedrons, cubes, rectangular prisms, and octahedrons, all with some scaling functionality. It does this with a simple pixel buffer, update loop, a some matrix math, provided very kindly by Math.js. Here is where I want to document the progression of EggTUI and its &quot;features&quot;.</p>
 <p>First up is the pixel buffer, which holds all the 2D pixel-coordinated data. The actual buffer is a 2-dimensional array of strings, meaning that it accesses the pixels in the buffer row-wise, and then column-wise, so ordered pairs are (y, x). This is easily fixed by only allowing the pixel buffer class to interact with the buffer itself, which reverses the x and y for all other classes in the program. Additionally, the pixel buffer class can ensure there are no out-of-bounds exceptions, uses <code>process.stdout.rows</code> and <code>process.stdout.columns</code> to get the native dimensions of the terminal, and translates pixel coordinates to make the center of the screen the origin on all axes. Other than that, it can clear the buffer and convert it into a one-dimensional array of strings that represent each row for easier printing. </p>
 <p>Next, the graphics manager is the heart of the system and acts as the arbiter between the draw loop and the pixel buffer, making a lot of necessary shortcuts and optimizations along the way. It lets the user set the fill and stroke &quot;colors&quot; as well as draw lines. Drawing lines, and doing it well, is the first major hurdle I and many other people have to tackle. It takes an understanding of math and what makes programs performant, to write a good line algorithm. I wrestled with Bresenham&#39;s line-drawing algorithm for a while, but couldn&#39;t understand it no matter how hard I tried, so I resorted to writing my own. Bresenham&#39;s is so fast and the industry standard because It relies heavily on addition and subtraction, with less multiplication or division, which are both more costly functions. Despite that, I used what I knew of good ol&#39; <code>y = mx + b</code> to write what&#39;s below.</p>
-<pre><code class="language-typescript">line(p1: math.Matrix, p2: math.Matrix): void &rbrace;
+<pre><code class="language-typescript">line(p1: math.Matrix, p2: math.Matrix): void &lbrace;
     let deltaY: number = p2.get([1]) - p1.get([1]); // y2 - y1
     let deltaX: number = p2.get([0]) - p1.get([0]); // x2 - x1
     let m: number = dy / dx;
     let b = -m * p1.get([0]) + p1.get([1]); // Solve for slope intercept
 
-    for(let x = Math.min(p1.get([0]), p2.get([0])); x &lt; Math.max(p1.get([0]), p2.get([0])); x += 1) &rbrace;
+    for(let x = Math.min(p1.get([0]), p2.get([0])); x &lt; Math.max(p1.get([0]), p2.get([0])); x += 1) &lbrace;
         let coords = matrix([x, m * x + b]); // Solve for y based on the given x
         coords = coords.map(Math.round); // Floor to get valid indicies
         this.pixelBuffer.set(p, this.stroke); // Set the coordinates pixel

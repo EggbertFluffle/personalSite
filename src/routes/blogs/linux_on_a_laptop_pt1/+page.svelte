@@ -1,3 +1,10 @@
+<title>Linux on a Laptop: My Experience (pt. 1)</title>
+<meta name="title" content="Linux on a Laptop: My Experience (pt. 1)">
+<meta name="description" content="Explore my journey setting up GNU/Linux on a ThinkPad T16 with Void Linux. Discover the benefits of customizability, the simplicity of package managers, and the ease of programming tools like Neovim.">
+<meta name="author" content="Harrison DiAmbrosio">
+<meta name="keywords" content="Linux, Void Linux, ThinkPad T16, GNU/Linux, Neovim, Void Linux install, Linux package managers, xbps, systemd, runit, Linux programming tools">
+<meta name="robots" content="index, follow">
+
 <h1 id="linux-on-a-laptop-my-experience">Linux on a Laptop: My Experience (pt.1)</h1>
 <h2 id="introduction">Introduction</h2>
 <p>Recently, I got a ThinkPad T16 as a new laptop for school, and with such a large intersection between the ThinkPad and Linux communities, I had to install GNU/Linux on my new daily driver system. There are a couple reasons for this, mainly due to its simplicity (in my
