@@ -8,7 +8,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			fallback: '404.html',
-			pages: "../eggbertfluffle.github.io"
+			pages: "build"
 		})
 	}
 };

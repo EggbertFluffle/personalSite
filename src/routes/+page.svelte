@@ -3,6 +3,7 @@
 
 	import Hero from "./components/Hero.svelte";
 	import WhoAmI from "./components/WhoAmI.svelte";
+	import Projects from "./components/Projects.svelte";
 	import Blogs from "./components/Blogs.svelte";
 	import Contact from "./components/Contact.svelte";
 	import Community from "./components/Community.svelte";
@@ -14,6 +15,7 @@
 	<ThemePicker />
 	<Hero />
 	<WhoAmI/>
+	<Projects />
 	<Blogs />
 	<Community />
 	<Contact />
