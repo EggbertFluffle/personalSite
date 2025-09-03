@@ -6,6 +6,7 @@
 
 <select bind:value={pickedTheme} on:change={() => themeName.update(() => pickedTheme)} style="--background1: {$currentTheme.background1}; --foreground: {$currentTheme.foreground}; --red: {$currentTheme.red};">
 	<option id="gruvbox" value="gruvbox">Gruvbox</option>
+	<option id="ashen" value="ashen">Ashen</option>
 	<option id="dracula" value="dracula">Dracula</option>
 	<option id="tokyo_night" value="tokyo_night">Tokyo-Night</option>
 </select>
@@ -44,5 +45,10 @@
 	#tokyo_night {
 		background-color: #1a1b26;
 		color: #a9b1d6;
+	}
+
+	#ashen {
+		background-color: #121212;
+		color: #df6464;
 	}
 </style>

@@ -44,7 +44,7 @@
 		padding-block: 5%;
 		background-color: var(--background1);
 		min-height: 100vmin;
-		font-size: 22px;
+		font-size: 1.35rem;
 	}
 
 	main :global(*) {
@@ -94,7 +94,7 @@
 	main :global(code) {
 		font-family: monospace;
 		background-color: var(--background2);
-		font-size: 1.2rem;
+		max-width: 100lvw;
 	}
 
 	main :global(span) {
@@ -103,7 +103,9 @@
 
 	main :global(pre) {
 		background: var(--background2);
-		white-space: pre-wrap;
+		text-wrap-mode: nowrap;
+		overflow-x: scroll;
+		max-width: 100lvw;
 		padding: 1rem;
 	}
 
@@ -124,19 +126,31 @@
 			padding-inline: 1rem;
 		}
 
+		main :global(h1)::before {
+			display: none;
+		}
+
+		main :global(h2)::before {
+			display: none;
+		}
+
 		main :global(p) {
-			font-size: 1.25rem;
+			font-size: 1rem;
 		 	line-height: 1.35rem;
 		}
 
+		main :global(pre) {
+			font-size: 1rem;
+		}
+
 		main :global(ol) {
-			font-size: 1.25rem;
+			font-size: 1rem;
 		 	line-height: 1.35rem;
 			margin-inline: 2rem;
 		}
 
 		main :global(ul) {
-			font-size: 1.25rem;
+			font-size: 1rem;
 		 	line-height: 1.35rem;
 			margin-inline: 2rem;
 		}

@@ -5,21 +5,28 @@
 
 	let firstName: string = "Harrison";
 	let lastName: string = "DiAmbrosio";
-	let vowels: string = "aeiouAEIUO";
+	let vowels: string = "aeiou";
+
+	let mouse = { x: 0, y: 0 };
+	function mouseMove(event: MouseEvent): void {
+		mouse.x = event.pageX;
+		mouse.y = event.pageY - window.scrollY;
+	}
+
 	let floatingLettersSettings = {
 		translationalOffset: 1500,
 		rotationalOffset: 720
 	};
 </script>
 
-<div class="hero">
+<div on:mousemove={mouseMove} role="presentation" class="hero">
 	<h1 style="--foreground: {$currentTheme.foreground};">
 		{#each firstName as l}
-			<FloatingLetter letter={l} settings={floatingLettersSettings} highlighted={vowels.includes(l)}/>
+			<FloatingLetter letter={l} settings={floatingLettersSettings} mouse={mouse} highlighted={vowels.includes(l.toLowerCase())}/>
 		{/each}
 		<br/>
 		{#each lastName as l}
-			<FloatingLetter letter={l} settings={floatingLettersSettings} highlighted={vowels.includes(l)}/>
+			<FloatingLetter letter={l} settings={floatingLettersSettings} mouse={mouse} highlighted={vowels.includes(l.toLowerCase())}/>
 		{/each}
 	</h1>
 	<Nav/>

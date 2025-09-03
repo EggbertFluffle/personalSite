@@ -9,7 +9,7 @@
 	<div class="project-list">
 		<ProjectEntry 
 			name="BeepBoop.nvim" 
-			description="BeepBoop is a neovim plugin intended to make it easy to incorporate audio cues into neovim. This can be for accessibility reasons, or in my case, just for fun!"
+			description="A Neovim plugin intended to make it easy to incorporate audio cues into Neovim. This can be for accessibility reasons, or in my case, just for fun!"
 			link="https://github.com/EggbertFluffle/beepboop.nvim" />
 	</div>
 </div>
@@ -38,8 +38,8 @@
 	}
 
 	@media (max-width: 666px) {
-		div {
-			margin-inline: 0px;
+		.project-list {
+			margin-inline: 0rem;
 		}
 
 		h2 {

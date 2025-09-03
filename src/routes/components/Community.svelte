@@ -11,7 +11,8 @@
 		"SebastianLague",
 		"Kofybrek",
 		"jdh",
-		"TheCodingTrain"
+		"TheCodingTrain",
+		"MichaelMJD"
 	];
 </script>
 
@@ -26,7 +27,8 @@
 	<ul>
 		<li><a href="https://lunarflamestudios.com/">LunarFlame Studios</a> - Independant game dev team responsible for  the endlessly entertaining <a href="https://lunarflamestudios.com/pages/project-leo.php">Project Leo</a>. A fantastic game and team.</li>
 		<li><a href="https://squi.bid">Squibid</a> - Personal projects, blogs from the one, the only, Squibid.</li>
-		<li><a href="https://onocu.com">_Orange</a> - Three oranges in a trench coat, and great tea connoisseur.</li>
+		<li><a href="https://www.onocu.com">_Orange</a> - Three oranges in a trench coat, and great tea connoisseur.</li>
+		<li><a href="https://wideeyed.online/">lafayette°</a> - Electric classmate and <a href="https://www.instagram.com/lafayette.degrees/">graphic design hobbyist</a></li>
 	</ul>
 </div>
 

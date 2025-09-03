@@ -19,7 +19,7 @@
 	}
 
 	h4 {
-		font-size: 1.75rem;
+		font-size: 1.5rem;
 		text-align: left;
 	}
 
@@ -35,6 +35,19 @@
 	p {
 		text-decoration: none;
 		font-size: 1.25rem;
-		margin-left: 2.5rem;
+		text-indent: 3rem;
+		margin-left: 2rem;
+	}
+
+	@media (max-width: 666px) {
+		h4 {
+			font-size: 1.25rem;
+		}
+
+		p {
+			margin-top: 1rem;
+			margin-left: 1rem;
+			font-size: 1rem;
+		}
 	}
 </style>

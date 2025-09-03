@@ -39,10 +39,29 @@ const themes = {
 		cyan: "#73daca",
 		orange: "#ff9e64",
 		grey: "#a9b1d6"
+	},
+	"ashen": {
+		background1: "#121212",
+		background2: "#e5e5e5",
+		foreground: "#e5e5e5",
+		red: "#df6464",
+		green: "#1e6f54",
+		yellow: "#e5a72a",
+		blue: "#4a8b8b",
+		purple: "#6f2929",
+		cyan: "#b14242",
+		orange: "#c4693d",
+		grey: "#151515"
 	}
 };
 
+const availableThemes = Object.keys(themes);
+
+// Start with gruvbox
 const themeName = writable("gruvbox");
+
+// Random starting theme (if the others looked good)
+// const themeName = writable(availableThemes[Math.random() * availableThemes.length << 0]);
 const currentTheme = derived(themeName, ($themeName) => themes[$themeName])
 
 export { themeName, currentTheme };
