@@ -25,10 +25,10 @@
 	</p>
 	<h3>Favorites</h3>
 	<ul>
-		<li><a href="https://lunarflamestudios.com/">LunarFlame Studios</a> - Independant game dev team responsible for  the endlessly entertaining <a href="https://lunarflamestudios.com/pages/project-leo.php">Project Leo</a>. A fantastic game and team.</li>
-		<li><a href="https://squi.bid">Squibid</a> - Personal projects, blogs from the one, the only, Squibid.</li>
-		<li><a href="https://www.onocu.com">_Orange</a> - Three oranges in a trench coat, and great tea connoisseur.</li>
-		<li><a href="https://wideeyed.online/">lafayette°</a> - Electric classmate and <a href="https://www.instagram.com/lafayette.degrees/">graphic design hobbyist</a></li>
+		<li><a target="_blank" href="https://lunarflame.dev/">LunarFlame Studios</a> - Independant game dev team responsible for  the endlessly entertaining <a target="_blank" href="https://lunarflame.dev/pages/project-leo.php">Project Leo</a>. A fantastic game and team.</li>
+		<li><a target="_blank" href="https://squi.bid">Squibid</a> - Personal projects, blogs from the one, the only, Squibid.</li>
+		<li><a target="_blank" href="https://www.onocu.com">_Orange</a> - Three oranges in a trench coat, and great tea connoisseur.</li>
+		<li><a target="_blank" href="https://wideeyed.online/">lafayette°</a> - Electric classmate and <a target="_blank" href="https://www.instagram.com/lafayette.degrees/">graphic design hobbyist</a></li>
 	</ul>
 </div>
 
@@ -57,7 +57,7 @@
 
 	ul {
 		margin-inline: 5rem;
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 		list-style: none;
 	}
 
@@ -69,7 +69,7 @@
 		color: var(--foreground);
 		margin-inline: 5rem;
 		display: inline-block;
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 	}
 
 	.favorites-delimiter {

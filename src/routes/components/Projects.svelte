@@ -11,6 +11,10 @@
 			name="BeepBoop.nvim" 
 			description="A Neovim plugin intended to make it easy to incorporate audio cues into Neovim. This can be for accessibility reasons, or in my case, just for fun!"
 			link="https://github.com/EggbertFluffle/beepboop.nvim" />
+		<ProjectEntry 
+			name="MPRLab Percussion Robotics" 
+			description="Research led by Professor Scott D. Barton of Worcester Polytechnic Institute to study the effectiveness of voice coil actuators in mimicing and exceeding the capabilities of human drummers."
+			link="https://github.com/MPRlab/VCA_Percussion"/>
 	</div>
 </div>
 

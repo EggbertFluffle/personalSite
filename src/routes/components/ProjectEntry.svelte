@@ -6,7 +6,7 @@
 	export let link: string;
 </script>
 
-<a href={link}>
+<a href={link} target="_blank">
 	<div class="entry">
 		<h4>{name}</h4>
 		<p>{description}</p>
@@ -16,10 +16,11 @@
 <style>
 	a {
 		text-decoration: none;
+		margin-right: 0.25rem;
 	}
 
 	h4 {
-		font-size: 1.5rem;
+		font-size: 1.75rem;
 		text-align: left;
 	}
 
@@ -34,7 +35,7 @@
 
 	p {
 		text-decoration: none;
-		font-size: 1.25rem;
+		font-size: 1.35rem;
 		text-indent: 3rem;
 		margin-left: 2rem;
 	}

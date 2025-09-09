@@ -30,7 +30,7 @@
 
 	ul {
 		margin-inline: 5rem;
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 		list-style: none;
 	}
 
