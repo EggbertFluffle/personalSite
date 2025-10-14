@@ -8,12 +8,12 @@
 <p>I figured there would be far more C libraries for cross platform audio playing than native Zig ones, so I found a quite popular option, miniaudio.h, and simply translated it into Zig for me to use to my heart&#39;s content. This was nearly painless (I understand now that it is possible to not even translate the C myself, and include the translation in the build file). From here the rest of the application was a simple model of the logic I had in the C++ version, but with a lot more error checking courtesy of Zig.</p>
 <h2 id="the-ugly">The Ugly</h2>
 <p>Zig is really exciting, and I find learning about their design decisions to be a lot of fun. For example, one of Zig&#39;s defining qualities is the explicit use of allocators throughout the code, instead of just calling any old allocator from the system. This was already true, but recently, Zig has been trying to steer away from what they called &quot;managed&quot; allocation, over to &quot;unmanaged&quot; allocation. The difference lies in when the allocator is given to the data structure, either at intialization of the structure of for each allocation made by it.</p>
-<pre><code class="lang-zig">    <span class="hljs-comment">// Managed ArrayList</span>
-    <span class="hljs-keyword">const</span> arr = <span class="hljs-built_in">std</span>.ArrayList(i32).init(<span class="hljs-built_in">std</span>.heap.page_allocator);
-    <span class="hljs-keyword">try</span> arr.append(<span class="hljs-number">32</span>);
+<pre><code class="lang-zig"><span class="hljs-comment">// Managed ArrayList</span>
+<span class="hljs-keyword">const</span> arr = <span class="hljs-built_in">std</span>.ArrayList(i32).init(<span class="hljs-built_in">std</span>.heap.page_allocator);
+<span class="hljs-keyword">try</span> arr.append(<span class="hljs-number">32</span>);
 
-    <span class="hljs-comment">// Unamanaged ArrayList</span>
-    <span class="hljs-keyword">const</span> arr = <span class="hljs-built_in">std</span>.ArrayList(i32).init();
-    <span class="hljs-keyword">try</span> arr.append(<span class="hljs-number">32</span>, <span class="hljs-built_in">std</span>.heap.page_allocator);
+<span class="hljs-comment">// Unamanaged ArrayList</span>
+<span class="hljs-keyword">const</span> arr = <span class="hljs-built_in">std</span>.ArrayList(i32).init();
+<span class="hljs-keyword">try</span> arr.append(<span class="hljs-number">32</span>, <span class="hljs-built_in">std</span>.heap.page_allocator);
 </code></pre>
 <p>The unmanaged approach is something I&#39;m not used to, but willing to try out. But as the header suggests, this is about the ugly. Although the error handling is comprehensive, I find when I just want to crank out some code to solve a problem, or for <a href="https://adventofcode.com">Advent of Code</a>, it just gets in the way. In the end this is a design decision so that Zig can be as error prone as possible, among a plethura of other measures, just me being picking. Ok enough waffling.</p>

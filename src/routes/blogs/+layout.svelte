@@ -5,11 +5,14 @@
 
 	import typescript from "highlight.js/lib/languages/typescript";
 	import cpp from "highlight.js/lib/languages/cpp";
+	import zig from "highlightjs-zig/src/languages/zig";
 
     import ThemePicker from "../components/ThemePicker.svelte";
 
 	hljs.registerLanguage("typescript", typescript);
 	hljs.registerLanguage("c++", cpp);
+	hljs.registerLanguage("zig", zig);
+
 	onMount(() => {
 		const codeElements = document.getElementsByTagName("code");
 
@@ -17,11 +20,14 @@
 			let highlights;
 			console.log(codeElements[i].classList.values().toArray());
 			switch(codeElements[i].classList.values().toArray()[0]) {
-				case "lang-c++":
+				case "lang-cpp":
 					highlights = hljs.highlight(codeElements[i].innerText, { language: "cpp" }).value;
 					break;
-				case "language-typescript":
+				case "lang-tyescript":
 					highlights = hljs.highlight(codeElements[i].innerText, { language: "typescript" }).value;
+					break;
+				case "lang-zig":
+					highlights = hljs.highlight(codeElements[i].innerText, { language: "zig" }).value;
 					break;
 				default:
 					highlights = codeElements[i].innerText;

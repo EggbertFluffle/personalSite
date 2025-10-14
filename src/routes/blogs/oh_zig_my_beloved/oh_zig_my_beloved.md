@@ -17,13 +17,13 @@ I figured there would be far more C libraries for cross platform audio playing t
 Zig is really exciting, and I find learning about their design decisions to be a lot of fun. For example, one of Zig's defining qualities is the explicit use of allocators throughout the code, instead of just calling any old allocator from the system. This was already true, but recently, Zig has been trying to steer away from what they called "managed" allocation, over to "unmanaged" allocation. The difference lies in when the allocator is given to the data structure, either at intialization of the structure of for each allocation made by it.
 
 ```zig
-    // Managed ArrayList
-    const arr = std.ArrayList(i32).init(std.heap.page_allocator);
-    try arr.append(32);
+// Managed ArrayList
+const arr = std.ArrayList(i32).init(std.heap.page_allocator);
+try arr.append(32);
 
-    // Unamanaged ArrayList
-    const arr = std.ArrayList(i32).init();
-    try arr.append(32, std.heap.page_allocator);
+// Unamanaged ArrayList
+const arr = std.ArrayList(i32).init();
+try arr.append(32, std.heap.page_allocator);
 ```
 
 The unmanaged approach is something I'm not used to, but willing to try out. But as the header suggests, this is about the ugly. Although the error handling is comprehensive, I find when I just want to crank out some code to solve a problem, or for [Advent of Code](https://adventofcode.com), it just gets in the way. In the end this is a design decision so that Zig can be as error prone as possible, among a plethura of other measures, just me being picking. Ok enough waffling.
