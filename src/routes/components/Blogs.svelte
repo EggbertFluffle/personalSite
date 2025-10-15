@@ -5,6 +5,7 @@
 <div id="blog" style="--foreground: {$currentTheme.foreground}; --orange: {$currentTheme.orange}; --background2: {$currentTheme.background2}; --yellow: {$currentTheme.yellow};">
 	<h2>&lt;<span>Blog</span>&gt;</h2>
 	<ul>
+		<li>10/14/2025: <a href="/blogs/neovim_configuration_an_empirical_analysis">Neovim Configuration: An Empirical Analysis</a></li>
 		<li>10/07/2025: <a href="/blogs/oh_zig_my_beloved">Oh Zig me Beloved</a></li>
 		<li>02/11/2025: <a href="/blogs/hello_is_anyone_there">Hello? Is anyone there?</a></li>
 		<li>12/19/2024: <a href="/blogs/advent_of_code:_how_its_going">Advent of Code: How its Going</a></li>

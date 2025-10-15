@@ -1,41 +1,8 @@
 <script lang="ts">
-	import { currentTheme } from "../themes.js";
-	import { onMount } from "svelte";
-	import hljs from "highlight.js/lib/core";
+import ThemePicker from "../components/ThemePicker.svelte";
 
-	import typescript from "highlight.js/lib/languages/typescript";
-	import cpp from "highlight.js/lib/languages/cpp";
-	import zig from "highlightjs-zig/src/languages/zig";
-
-    import ThemePicker from "../components/ThemePicker.svelte";
-
-	hljs.registerLanguage("typescript", typescript);
-	hljs.registerLanguage("c++", cpp);
-	hljs.registerLanguage("zig", zig);
-
-	onMount(() => {
-		const codeElements = document.getElementsByTagName("code");
-
-		for(let i = 0; i < codeElements.length; i++) {
-			let highlights;
-			console.log(codeElements[i].classList.values().toArray());
-			switch(codeElements[i].classList.values().toArray()[0]) {
-				case "lang-cpp":
-					highlights = hljs.highlight(codeElements[i].innerText, { language: "cpp" }).value;
-					break;
-				case "lang-tyescript":
-					highlights = hljs.highlight(codeElements[i].innerText, { language: "typescript" }).value;
-					break;
-				case "lang-zig":
-					highlights = hljs.highlight(codeElements[i].innerText, { language: "zig" }).value;
-					break;
-				default:
-					highlights = codeElements[i].innerText;
-					break;
-			}
-			codeElements[i].innerHTML = highlights;
-		};
-	});
+import { currentTheme } from "../themes.js";
+import { onMount } from "svelte";
 </script>
 
 <ThemePicker /> 
@@ -46,22 +13,22 @@
 
 <style>
 	main {
-		padding-inline: 25%;
+		padding-inline: 20%;
 		padding-block: 5%;
 		background-color: var(--background1);
 		min-height: 100vmin;
-		font-size: 1.35rem;
+		font-size: 1.15rem;
 	}
 
 	main :global(*) {
 		color: var(--foreground);
 		font-family: Iosevka, monospace;
+		margin-block: 1rem;
 	}
 
 	main :global(h1) {
 		color: var(--red);
 		font-size: 3em;
-		margin-top: 0px;
 	}
 
 	main :global(h1)::before {
@@ -86,25 +53,27 @@
 
 	main :global(p) {
 		margin-block: 0.75rem;
-		line-height: 2rem;
+		line-height: 1.5rem;
 	}
 
 	main :global(a) {
 		color: var(--yellow);
 	}
 
+
 	main :global(a):visited {
 		color: var(--orange);
 	}
 
-	main :global(code) {
-		font-family: monospace;
-		background-color: var(--background2);
-		max-width: 100lvw;
-	}
-
 	main :global(span) {
 		font-family: monospace;
+	}
+
+	main :global(code) {
+		background: var(--background2);
+		text-wrap-mode: nowrap;
+		overflow-x: scroll;
+		max-width: 100lvw;
 	}
 
 	main :global(pre) {
@@ -118,7 +87,7 @@
 	main :global(ul) {
 		margin-inline: 5rem;
 	}
-	
+
 	main :global(ol) {
 		margin-inline: 5rem;
 	}
@@ -128,21 +97,13 @@
 	}
 
 	@media (max-width: 666px) {
-		main {
-			padding-inline: 1rem;
-		}
-
-		main :global(h1)::before {
-			display: none;
-		}
-
 		main :global(h2)::before {
 			display: none;
 		}
 
 		main :global(p) {
 			font-size: 1rem;
-		 	line-height: 1.35rem;
+			line-height: 1.35rem;
 		}
 
 		main :global(pre) {
@@ -151,13 +112,13 @@
 
 		main :global(ol) {
 			font-size: 1rem;
-		 	line-height: 1.35rem;
+			line-height: 1.35rem;
 			margin-inline: 2rem;
 		}
 
 		main :global(ul) {
 			font-size: 1rem;
-		 	line-height: 1.35rem;
+			line-height: 1.35rem;
 			margin-inline: 2rem;
 		}
 
@@ -172,111 +133,53 @@
 		}
 	}
 
+
 	main :global(img) {
 		width: 100%;
 	}
 
-	main :global(.hljs),
-	main :global(.hljs-subs)
-	{
-		color: var(--foreground);
-	}
-
-	/* Gruvbox Red */
-	main :global(.hljs-deletion),
-	main :global(.hljs-formula),
-	main :global(.hljs-keyword),
-	main :global(.hljs-link),
-	main :global(.hljs-selector-tag) 
-	{
+	main :global(.kw),
+	main :global(.cf),
+	main :global(.im),
+	main :global(.dt) {
 		color: var(--red);
 	}
 
-	/* Gruvbox Blue */
-	main :global(.hljs-built_in),
-	main :global(.hljs-emphasis),
-	main :global(.hljs-name),
-	main :global(.hljs-quote),
-	main :global(.hljs-strong),
-	main :global(.hljs-title),
-	main :global(.hljs-variable) 
-	{
-		color: var(--blue);
+	main :global(.va),
+	main :global(.ot) {
+		color: red;
 	}
 
-	/* Gruvbox Yellow */
-	main :global(.hljs-attr),
-	main :global(.hljs-params),
-	main :global(.hljs-template-tag),
-	main :global(.hljs-type) 
-	{
+	main :global(.at),
+	main :global(.pp) {
 		color: var(--yellow);
 	}
 
-	/* Gruvbox Purple */
-	main :global(.hljs-builtin-name),
-	main :global(.hljs-doctag),
-	main :global(.hljs-literal),
-	main :global(.hljs-number) 
-	{
+	main :global(.dv),
+	main :global(.bn),
+	main :global(.fl),
+	main :global(.cn),
+	main :global(.ch) {
 		color: var(--purple);
 	}
 
-	/* Gruvbox Orange */
-	main :global(.hljs-code),
-	main :global(.hljs-meta),
-	main :global(.hljs-regexp),
-	main :global(.hljs-template-variable) 
-	{
+	main :global(.op),
+	main :global(.sc),
+	main :global(.ss) {
 		color: var(--orange);
 	}
 
-	/* Gruvbox Green */
-	main :global(.hljs-addition),
-	main :global(.hljs-meta-string),
-	main :global(.hljs-section),
-	main :global(.hljs-selector-attr),
-	main :global(.hljs-selector-class),
-	main :global(.hljs-string),
-	main :global(.hljs-symbol) 
-	{
+	main :global(.st) {
 		color: var(--green);
 	}
 
-	/* Gruvbox Aqua */
-	main :global(.hljs-attribute),
-	main :global(.hljs-bullet),
-	main :global(.hljs-class),
-	main :global(.hljs-function),
-	main :global(.hljs-function .hljs-keyword),
-	main :global(.hljs-meta-keyword),
-	main :global(.hljs-selector-pseudo),
-	main :global(.hljs-tag) 
-	{
+	main :global(.fu),
+	main :global(.bu) {
 		color: var(--aqua);
 	}
 
-	/* Gruvbox Gray */
-	main :global(.hljs-comment) 
-	{
+	main :global(.co) {
 		color: var(--grey);
-	}
-
-	main :global(.hljs-comment),
-	main :global(.hljs-emphasis) 
-	{
-		font-style: italic;
-	}
-
-	main :global(.hljs-section),
-	main :global(.hljs-strong),
-	main :global(.hljs-tag) 
-	{
-		font-weight: bold;
-	}
-
-	main :global(blockquote) {
-		margin: 2rem;
 		font-style: italic;
 	}
 </style>

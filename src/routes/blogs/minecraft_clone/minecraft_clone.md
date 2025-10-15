@@ -2,7 +2,7 @@
 
 Honestly I'm surprise I haven't created something of a Minecraft clone already. I originally just wanted to play around with more in depth graphics programming (in 3D specifically) and prior to this I had only ever used [Processing](https://processing.org/) and [p5.js](https://p5js.org/)'s 3D rendering capabilities, as well as [Three.js](https://threejs.org/) for a cool basic online multiplayer game. Obviously these come with the benefits of JavaScript, but sadly,they also come with the drawbacks of JavaScript (or Java in the case of Processing). Because of this and a desire to improve my handle on the C++ standard lib, STL and language in general, I decided between OpenGL or Vulkan, which led me to pick OpenGL almost arbitrarily. I've heard a lot about the two previously, and from my limited research I found that Vulkan was more "low-level" than OpenGL and therefore could get more performance squeezed out of it, but still it was harder and this was my first time being in the weeds of graphics programming, so I thought I'd make things easy for myself and switch later if I felt I needed to.
 
-At this point, the people of reddit praised [learnopengl.org](https://learnopengl.com/) so I followed it's tutorials, and would recommend it, or it's physical bool version, to anyone interested in dipping their toes. Either way, I got through the basics of rendering and started to figure out how I would put together a little Minecraft simulation, which I ended up deciding to call [Mingleburb](https;//github.com/EggbertFluffle/Mingleburb) for no reason other than I thought it was funny.
+At this point, the people of reddit praised [learnopengl.org](https://learnopengl.com/) so I followed it's tutorials, and would recommend it, or it's physical bool version, to anyone interested in dipping their toes. Either way, I got through the basics of rendering and started to figure out how I would put together a little Minecraft simulation, which I ended up deciding to call [Mingleburb](https://github.com/EggbertFluffle/Mingleburb) for no reason other than I thought it was funny.
 
 First, what do I want to happen with this little experiment:
 
@@ -116,3 +116,13 @@ Coming into this the most "project organization" I did was throwing everything i
 There was some more moving parts to the real makefile, but this is main attraction, where I essentially tell make that if it needs any sort of object file that isn't already compiled into an object file, go compile just that file and continue. What this also allows is the skipping of compiling files that have not changed since the last run of make. Finally, a friend of mine [squibid](https://squi.bid) suggested I use the shell command `pkg-config --libs --cflags glfw3` so that I could get the proper names of the library files I had to link to. This removed the need for me to change the makefile weather I was programming on my desktop running Void Linux, or my Chromebook running Debian, which both have different names for the glfw library files. This improved the workflow tremendously and I would have burn out of this project far sooner if I hadn't taken the time to at least learn the basics.
 
 The other lifesaver for this project was gdb or the GNU Project Debugger. This tool allows me to add a `-g` flag to my `g++` call and add debug information to the executable. Then running gdb on the file allows me to run the file until I reach a segmentation fault. The magic happens when I run `backtrace` which then gives me the call stack before my code went wrong. THIS!!! THIS GODSEND GIFT SAVED ME HOURS!!! Before gdb, I used to just comment out code until I didn't get segfaults, then try to puzzle out the issue, only to get a completely unrelated segfault right afterwards. I still get them quite often and were huge demotivators in the development of Mingleburb but you live and you learn. Either way I want to become more familiar with gdb in the future as it seems to have a lot of really useful features like being able to see the values of local variables, step through instructions, view Assembly outputs and use breakpoints in code.
+
+## Gallery
+
+Some simple terrain generation using basic perlin noise.
+![](/images/minecraft_clone_basic_terrain.png)
+Differnt textured blocks can be rendered with each other. A sea of pink wool with some islands made of wood.
+![](/images/minecraft_clone_mixed_pink_sea.png)
+Blocks are culled everywhere a player shouldn't be able to see, in between two blocks, from the void of the world.
+![
+](/images/minecraft_clone_proof_of_culling.png)
