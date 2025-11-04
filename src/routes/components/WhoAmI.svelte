@@ -4,7 +4,7 @@
 
 <div id="whoAmI" style="--foreground: {$currentTheme.foreground}; --red: {$currentTheme.red}; --green: {$currentTheme.green}; --background2: {$currentTheme.background2}; --yellow: {$currentTheme.yellow}; --orange: {$currentTheme.orange};">
 	<h2>&lt;<span>WhoAmI</span>&gt;</h2>
-	<p>I am <em>H<span>a</span>rr<span>i</span>s<span>o</span>n D<span>iA</span>mbr<span>o</span>s<span>io</span></em>, a programmer who appreciates the elegance of simple computer systems. As a student at Worcester Polytechnic Institute, my work is infused with the ideals UNIX Philosophy, while embracing modern systems technologies to fuel an addiction to constant exploration. <h3>Technologies, Dotfiles, and Software I like</h3>
+	<p>I am <em>H<span>a</span>rr<span>i</span>s<span>o</span>n D<span>iA</span>mbr<span>o</span>s<span>io</span></em>, a programmer who appreciates the elegance of simple computer systems. As a student at Worcester Polytechnic Institute, my work is infused with the ideals of the UNIX Philosophy, while embracing modern systems technologies to fuel an addiction to constant exploration. <h3>Technologies, Dotfiles, and Software I like</h3>
 	<ul>
 		<li><a target="_blank" href="https://github.com/EggbertFluffle/nvim"><strong>Neovim</strong></a> - Crown jewel of a text editor and the only way I can type now.</li>
 		<li><a target="_blank" href="https://voidlinux.org/"><strong>Linux (Void, Debian)</strong></a> - Let's be real, distros they're all the same</li>

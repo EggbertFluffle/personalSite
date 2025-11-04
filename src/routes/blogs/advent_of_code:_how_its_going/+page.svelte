@@ -46,23 +46,23 @@ first get the XOR of b and a and store into a like so:
 <code>a = a ^ b;</code>. Then, XOR a and b into b, this should give the
 previous value of a into b. Finally, XOR the two values again but store
 into a. This should look something like this.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{"{"}</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;a: </span><span class="sc">%d</span><span class="st">, b: </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> a<span class="op">,</span> b<span class="op">);</span> <span class="co">// a: 3, b: 6</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;a: </span><span class="sc">%d</span><span class="st">, b: </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> a<span class="op">,</span> b<span class="op">);</span> <span class="co">// a: 6, b: 3</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="dt">int</span> main<span class="op">()</span> <span class="op">{"{"}</span></span>
+<span id="cb1-4">    </span>
+<span id="cb1-5">    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb1-6">    <span class="dt">int</span> b <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb1-7"></span>
+<span id="cb1-8">    printf<span class="op">(</span><span class="st">&quot;a: </span><span class="sc">%d</span><span class="st">, b: </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> a<span class="op">,</span> b<span class="op">);</span> <span class="co">// a: 3, b: 6</span></span>
+<span id="cb1-9"></span>
+<span id="cb1-10">    a <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span></span>
+<span id="cb1-11">    b <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span></span>
+<span id="cb1-12">    a <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span></span>
+<span id="cb1-13"></span>
+<span id="cb1-14">    printf<span class="op">(</span><span class="st">&quot;a: </span><span class="sc">%d</span><span class="st">, b: </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> a<span class="op">,</span> b<span class="op">);</span> <span class="co">// a: 6, b: 3</span></span>
+<span id="cb1-15"></span>
+<span id="cb1-16">    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-17"><span class="op">}</span></span></code></pre></div>
 <h3 id="asserts-wow-how-did-i-not-use-these-sooner">Asserts (wow how did
 i not use these sooner)</h3>
 <p>An assert is <em>EXTREMELY</em> simple to understand. It is a macro
@@ -107,20 +107,20 @@ most of these functions were overloaded to just take a container that
 has an iterator, and just run the spesified method on the start to the
 end. For example:</p>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;algorithm&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;array&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{"{"}</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>array<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="dv">5</span><span class="op">&gt;</span> arr<span class="op">({"{"}</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">});</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>for_each<span class="op">(</span>arr<span class="op">.</span>begin<span class="op">(),</span> arr<span class="op">.</span>end<span class="op">(),</span> <span class="op">[](</span><span class="dt">int</span> i<span class="op">){"{"}</span> <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> i <span class="op">&lt;&lt;</span> <span class="st">&quot;, &quot;</span><span class="op">;</span> <span class="op">});</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Should perform the same functionality as...</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>for_each<span class="op">(</span>arr<span class="op">.</span>begin<span class="op">(),</span> <span class="op">[](</span><span class="dt">int</span> i<span class="op">){"{"}</span> <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> i <span class="op">&lt;&lt;</span> <span class="st">&quot;, &quot;</span><span class="op">;</span> <span class="op">});</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><span class="pp">#include </span><span class="im">&lt;algorithm&gt;</span></span>
+<span id="cb2-2"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb2-3"><span class="pp">#include </span><span class="im">&lt;array&gt;</span></span>
+<span id="cb2-4"></span>
+<span id="cb2-5"><span class="dt">int</span> main<span class="op">()</span> <span class="op">{"{"}</span></span>
+<span id="cb2-6">    <span class="bu">std::</span>array<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="dv">5</span><span class="op">&gt;</span> arr<span class="op">({"{"}</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">});</span></span>
+<span id="cb2-7"></span>
+<span id="cb2-8">    <span class="bu">std::</span>for_each<span class="op">(</span>arr<span class="op">.</span>begin<span class="op">(),</span> arr<span class="op">.</span>end<span class="op">(),</span> <span class="op">[](</span><span class="dt">int</span> i<span class="op">){"{"}</span> <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> i <span class="op">&lt;&lt;</span> <span class="st">&quot;, &quot;</span><span class="op">;</span> <span class="op">});</span></span>
+<span id="cb2-9"></span>
+<span id="cb2-10">    <span class="co">// Should perform the same functionality as...</span></span>
+<span id="cb2-11">    <span class="bu">std::</span>for_each<span class="op">(</span>arr<span class="op">.</span>begin<span class="op">(),</span> <span class="op">[](</span><span class="dt">int</span> i<span class="op">){"{"}</span> <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> i <span class="op">&lt;&lt;</span> <span class="st">&quot;, &quot;</span><span class="op">;</span> <span class="op">});</span></span>
+<span id="cb2-12"></span>
+<span id="cb2-13">    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-14"><span class="op">}</span></span></code></pre></div>
 <p>Regardless, templates start to become a little confusing (admittedly
 it could be a skill issue) when concerning functional types like
 lambdas. I still have a lot to learn regarding tempalte and compile-time

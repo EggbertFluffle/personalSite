@@ -55,13 +55,13 @@ difference lies in when the allocator is given to the data structure,
 either at initialization of the structure of for each allocation made by
 it.</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode zig"><code class="sourceCode zig"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Managed ArrayList</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">const</span> arr <span class="op">=</span> std<span class="op">.</span>ArrayList(<span class="dt">i32</span>)<span class="op">.</span>init(std<span class="op">.</span>heap<span class="op">.</span>page_allocator);</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> arr<span class="op">.</span>append(<span class="dv">32</span>);</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Unamanaged ArrayList</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">const</span> arr <span class="op">=</span> std<span class="op">.</span>ArrayList(<span class="dt">i32</span>)<span class="op">.</span>init();</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> arr<span class="op">.</span>append(<span class="dv">32</span><span class="op">,</span> std<span class="op">.</span>heap<span class="op">.</span>page_allocator);</span></code></pre></div>
+class="sourceCode zig"><code class="sourceCode zig"><span id="cb1-1"><span class="co">// Managed ArrayList</span></span>
+<span id="cb1-2"><span class="at">const</span> arr <span class="op">=</span> std<span class="op">.</span>ArrayList(<span class="dt">i32</span>)<span class="op">.</span>init(std<span class="op">.</span>heap<span class="op">.</span>page_allocator);</span>
+<span id="cb1-3"><span class="cf">try</span> arr<span class="op">.</span>append(<span class="dv">32</span>);</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="co">// Unamanaged ArrayList</span></span>
+<span id="cb1-6"><span class="at">const</span> arr <span class="op">=</span> std<span class="op">.</span>ArrayList(<span class="dt">i32</span>)<span class="op">.</span>init();</span>
+<span id="cb1-7"><span class="cf">try</span> arr<span class="op">.</span>append(<span class="dv">32</span><span class="op">,</span> std<span class="op">.</span>heap<span class="op">.</span>page_allocator);</span></code></pre></div>
 <p>The unmanaged approach is something I’m not used to, but willing to
 try out. But as the header suggests, this is about the ugly. Although
 the error handling is comprehensive, I find when I just want to crank

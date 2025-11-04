@@ -2,7 +2,6 @@
 import ThemePicker from "../components/ThemePicker.svelte";
 
 import { currentTheme } from "../themes.js";
-import { onMount } from "svelte";
 </script>
 
 <ThemePicker /> 
@@ -96,6 +95,10 @@ import { onMount } from "svelte";
 		margin-block: 0.75rem;
 	}
 
+	main :global(.hidden) {
+		color: var(--background1);
+	}
+
 	@media (max-width: 666px) {
 		main :global(h2)::before {
 			display: none;
@@ -147,7 +150,7 @@ import { onMount } from "svelte";
 
 	main :global(.va),
 	main :global(.ot) {
-		color: red;
+		color: var(--foreground);
 	}
 
 	main :global(.at),

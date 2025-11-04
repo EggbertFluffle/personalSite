@@ -9,6 +9,7 @@
 	<option id="ashen" value="ashen">Ashen</option>
 	<option id="dracula" value="dracula">Dracula</option>
 	<option id="tokyo_night" value="tokyo_night">Tokyo-Night</option>
+	<option id="gruber_darker" value="gruber_darker">Gruber Darker</option>
 </select>
 
 <style>
@@ -50,5 +51,10 @@
 	#ashen {
 		background-color: #121212;
 		color: #df6464;
+	}
+
+	#gruber_darker{
+		background-color: #181818;
+		color: #f3f3fe;
 	}
 </style>

@@ -52,6 +52,19 @@ const themes = {
 		cyan: "#b14242",
 		orange: "#c4693d",
 		grey: "#151515"
+	},
+	"gruber_darker": {
+		background1: "#181818",
+		background2: "#282828",
+		foreground: "#f3f3fe",
+		red: "#ffdd33",
+		green: "#73d936",
+		yellow: "#ffdd33",
+		blue: "#96a5c7",
+		purple: "#96a5c7",
+		cyan: "#92a69c",
+		orange: "#ffdd33",
+		grey: "#96a5c7"
 	}
 };
 

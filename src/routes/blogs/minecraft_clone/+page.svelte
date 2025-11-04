@@ -48,16 +48,16 @@ to be more efficient (as of now I’m being punished for fixing something
 that already worked as the entire simulation is bugged because of my
 memory greed T-T).</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">//  Block.hpp</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Block <span class="op">{"{"}</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>stirng texture<span class="op">;</span> <span class="co">// Texture name for block</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">unsigned</span> <span class="dt">char</span> faces<span class="op">;</span> <span class="co">// Which faces of the block are visible</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">bool</span> air<span class="op">;</span> <span class="co">// Is this an air block</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    Block<span class="op">()</span> <span class="op">:</span> air<span class="op">(</span><span class="kw">true</span><span class="op">)</span> <span class="op">{"{"}}</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    Block<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> textureName<span class="op">)</span> <span class="op">:</span> texture<span class="op">(</span>textureName<span class="op">),</span> air<span class="op">(</span><span class="kw">false</span><span class="op">)</span> <span class="op">{"{"}}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><span class="co">//  Block.hpp</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="kw">struct</span> Block <span class="op">{"{"}</span></span>
+<span id="cb1-4">    <span class="bu">std::</span>stirng texture<span class="op">;</span> <span class="co">// Texture name for block</span></span>
+<span id="cb1-5">    <span class="dt">unsigned</span> <span class="dt">char</span> faces<span class="op">;</span> <span class="co">// Which faces of the block are visible</span></span>
+<span id="cb1-6">    <span class="dt">bool</span> air<span class="op">;</span> <span class="co">// Is this an air block</span></span>
+<span id="cb1-7"></span>
+<span id="cb1-8">    Block<span class="op">()</span> <span class="op">:</span> air<span class="op">(</span><span class="kw">true</span><span class="op">)</span> <span class="op">{"{"}}</span></span>
+<span id="cb1-9">    Block<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> textureName<span class="op">)</span> <span class="op">:</span> texture<span class="op">(</span>textureName<span class="op">),</span> air<span class="op">(</span><span class="kw">false</span><span class="op">)</span> <span class="op">{"{"}}</span></span>
+<span id="cb1-10"><span class="op">};</span></span></code></pre></div>
 <p>With that out of the way, these were simple stored in a c-style
 3-dimensional array. Also at this point in the program, the entirely of
 the code base was 1 main.cpp file, and so I create a much nicer
@@ -140,30 +140,30 @@ requested block is out of bounds, and a <code>Block*</code> with an
 <code>id</code> of 0 if the block represents air (also air is skipped in
 the rendering process) Now the actually face culling:</p>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> GameManager<span class="op">::</span>cullFaces<span class="op">(</span><span class="dt">int</span> x<span class="op">,</span> <span class="dt">int</span> y<span class="op">,</span> <span class="dt">int</span> z<span class="op">)</span> <span class="op">{"{"}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        Block<span class="op">*</span> block <span class="op">=</span> getBlock<span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">);</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">unsigned</span> <span class="dt">char</span> faces <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(</span>block <span class="op">==</span> <span class="kw">nullptr</span> <span class="op">||</span> block<span class="op">-&gt;</span>id <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Block<span class="op">*</span> dirs<span class="op">[</span><span class="dv">6</span><span class="op">]</span> <span class="op">=</span> <span class="op">{"{"}</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                getBlock<span class="op">(</span>x <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> y<span class="op">,</span> z<span class="op">),</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                getBlock<span class="op">(</span>x <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> y<span class="op">,</span> z<span class="op">),</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                getBlock<span class="op">(</span>x<span class="op">,</span> y <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> z<span class="op">),</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                getBlock<span class="op">(</span>x<span class="op">,</span> y <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> z<span class="op">),</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                getBlock<span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z <span class="op">+</span> <span class="dv">1</span><span class="op">),</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                getBlock<span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z <span class="op">-</span> <span class="dv">1</span><span class="op">),</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">};</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">6</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{"{"}</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                <span class="dt">unsigned</span> <span class="dt">char</span> f <span class="op">=</span> <span class="bn">0b10000000</span> <span class="op">&gt;&gt;</span> <span class="op">(</span>i<span class="op">);</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                Block<span class="op">*</span> b <span class="op">=</span> dirs<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="op">(</span>b <span class="op">==</span> <span class="kw">nullptr</span> <span class="op">||</span> <span class="op">(</span>b <span class="op">!=</span> <span class="kw">nullptr</span> <span class="op">&amp;&amp;</span> b<span class="op">-&gt;</span>id <span class="op">!=</span> <span class="dv">0</span><span class="op">))</span> <span class="op">{"{"}</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                        faces <span class="op">=</span> faces <span class="op">|</span> f<span class="op">;</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        faces <span class="op">=</span> <span class="op">~</span>faces<span class="op">;</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        block<span class="op">-&gt;</span>faces <span class="op">=</span> faces<span class="op">;</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><span class="dt">void</span> GameManager<span class="op">::</span>cullFaces<span class="op">(</span><span class="dt">int</span> x<span class="op">,</span> <span class="dt">int</span> y<span class="op">,</span> <span class="dt">int</span> z<span class="op">)</span> <span class="op">{"{"}</span></span>
+<span id="cb2-2">        Block<span class="op">*</span> block <span class="op">=</span> getBlock<span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">);</span></span>
+<span id="cb2-3">        <span class="dt">unsigned</span> <span class="dt">char</span> faces <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-4">        <span class="cf">if</span><span class="op">(</span>block <span class="op">==</span> <span class="kw">nullptr</span> <span class="op">||</span> block<span class="op">-&gt;</span>id <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb2-5">        Block<span class="op">*</span> dirs<span class="op">[</span><span class="dv">6</span><span class="op">]</span> <span class="op">=</span> <span class="op">{"{"}</span></span>
+<span id="cb2-6">                getBlock<span class="op">(</span>x <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> y<span class="op">,</span> z<span class="op">),</span></span>
+<span id="cb2-7">                getBlock<span class="op">(</span>x <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> y<span class="op">,</span> z<span class="op">),</span></span>
+<span id="cb2-8">                getBlock<span class="op">(</span>x<span class="op">,</span> y <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> z<span class="op">),</span></span>
+<span id="cb2-9">                getBlock<span class="op">(</span>x<span class="op">,</span> y <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> z<span class="op">),</span></span>
+<span id="cb2-10">                getBlock<span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z <span class="op">+</span> <span class="dv">1</span><span class="op">),</span></span>
+<span id="cb2-11">                getBlock<span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z <span class="op">-</span> <span class="dv">1</span><span class="op">),</span></span>
+<span id="cb2-12">        <span class="op">};</span></span>
+<span id="cb2-13"></span>
+<span id="cb2-14">        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">6</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{"{"}</span></span>
+<span id="cb2-15">                <span class="dt">unsigned</span> <span class="dt">char</span> f <span class="op">=</span> <span class="bn">0b10000000</span> <span class="op">&gt;&gt;</span> <span class="op">(</span>i<span class="op">);</span></span>
+<span id="cb2-16">                Block<span class="op">*</span> b <span class="op">=</span> dirs<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb2-17">                <span class="cf">if</span> <span class="op">(</span>b <span class="op">==</span> <span class="kw">nullptr</span> <span class="op">||</span> <span class="op">(</span>b <span class="op">!=</span> <span class="kw">nullptr</span> <span class="op">&amp;&amp;</span> b<span class="op">-&gt;</span>id <span class="op">!=</span> <span class="dv">0</span><span class="op">))</span> <span class="op">{"{"}</span></span>
+<span id="cb2-18">                        faces <span class="op">=</span> faces <span class="op">|</span> f<span class="op">;</span></span>
+<span id="cb2-19">                <span class="op">}</span></span>
+<span id="cb2-20">        <span class="op">}</span></span>
+<span id="cb2-21">        faces <span class="op">=</span> <span class="op">~</span>faces<span class="op">;</span></span>
+<span id="cb2-22"></span>
+<span id="cb2-23">        block<span class="op">-&gt;</span>faces <span class="op">=</span> faces<span class="op">;</span></span>
+<span id="cb2-24"><span class="op">}</span></span></code></pre></div>
 <h2 id="block-highlighting">Block Highlighting</h2>
 <p>The <code>id</code> that I mentioned also keeps track of the texture
 to be applied to each block, which are loaded using
@@ -181,35 +181,35 @@ block, the lerp stops, and we tell the block to highlight itself in the
 next render. This code comes out to look like this, and I will talk
 about why this is a naive approach in my opinion.</p>
 <div class="sourceCode" id="cb3"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Player<span class="op">::</span>castBlockRay<span class="op">(</span>GameManager<span class="op">*</span> gameManager<span class="op">)</span> <span class="op">{"{"}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        Block<span class="op">*</span> block<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">// a is the interpolation values</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">// 100 equally spaced vectors to test between the player and its max reach</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">float</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> a <span class="op">&lt;</span> <span class="fl">1.0</span><span class="bu">f</span><span class="op">;</span> a <span class="op">+=</span> <span class="fl">0.01</span><span class="bu">f</span><span class="op">)</span> <span class="op">{"{"}</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                <span class="co">// the actual lerping</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                glm<span class="op">::</span>vec3 reach<span class="op">(</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                        position<span class="op">.</span>x <span class="op">+</span> <span class="op">(</span>lookDir<span class="op">.</span>x <span class="op">*</span> viewDistance<span class="op">)</span> <span class="op">*</span> a<span class="op">,</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                        position<span class="op">.</span>y <span class="op">+</span> <span class="op">(</span>lookDir<span class="op">.</span>y <span class="op">*</span> viewDistance<span class="op">)</span> <span class="op">*</span> a<span class="op">,</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                        position<span class="op">.</span>z <span class="op">+</span> <span class="op">(</span>lookDir<span class="op">.</span>z <span class="op">*</span> viewDistance<span class="op">)</span> <span class="op">*</span> a</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                <span class="op">);</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                <span class="co">// round and test for a block</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                block <span class="op">=</span> gameManager<span class="op">-&gt;</span>getBlock<span class="op">(</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">int</span><span class="op">(</span>reach<span class="op">.</span>x <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">int</span><span class="op">(</span>reach<span class="op">.</span>y <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">int</span><span class="op">(</span>reach<span class="op">.</span>z <span class="op">+</span> <span class="fl">0.5</span><span class="op">)</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                <span class="op">);</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span><span class="op">(</span>block <span class="op">!=</span> <span class="kw">nullptr</span> <span class="op">&amp;&amp;</span> block<span class="op">-&gt;</span>id <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{"{"}</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                        selectedBlock <span class="op">=</span> block<span class="op">;</span> </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                        selectedBlockCoords <span class="op">=</span> glm<span class="op">::</span>vec3<span class="op">(</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                                <span class="bu">std::</span>floor<span class="op">(</span>reach<span class="op">.</span>x <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                                <span class="bu">std::</span>floor<span class="op">(</span>reach<span class="op">.</span>y <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>                                <span class="bu">std::</span>floor<span class="op">(</span>reach<span class="op">.</span>z <span class="op">+</span> <span class="fl">0.5</span><span class="op">)</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>                        <span class="op">);</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        selectedBlock <span class="op">=</span> <span class="kw">nullptr</span><span class="op">;</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><span class="dt">void</span> Player<span class="op">::</span>castBlockRay<span class="op">(</span>GameManager<span class="op">*</span> gameManager<span class="op">)</span> <span class="op">{"{"}</span></span>
+<span id="cb3-2">        Block<span class="op">*</span> block<span class="op">;</span></span>
+<span id="cb3-3">        <span class="co">// a is the interpolation values</span></span>
+<span id="cb3-4">        <span class="co">// 100 equally spaced vectors to test between the player and its max reach</span></span>
+<span id="cb3-5">        <span class="cf">for</span><span class="op">(</span><span class="dt">float</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> a <span class="op">&lt;</span> <span class="fl">1.0</span><span class="bu">f</span><span class="op">;</span> a <span class="op">+=</span> <span class="fl">0.01</span><span class="bu">f</span><span class="op">)</span> <span class="op">{"{"}</span></span>
+<span id="cb3-6">                <span class="co">// the actual lerping</span></span>
+<span id="cb3-7">                glm<span class="op">::</span>vec3 reach<span class="op">(</span></span>
+<span id="cb3-8">                        position<span class="op">.</span>x <span class="op">+</span> <span class="op">(</span>lookDir<span class="op">.</span>x <span class="op">*</span> viewDistance<span class="op">)</span> <span class="op">*</span> a<span class="op">,</span></span>
+<span id="cb3-9">                        position<span class="op">.</span>y <span class="op">+</span> <span class="op">(</span>lookDir<span class="op">.</span>y <span class="op">*</span> viewDistance<span class="op">)</span> <span class="op">*</span> a<span class="op">,</span></span>
+<span id="cb3-10">                        position<span class="op">.</span>z <span class="op">+</span> <span class="op">(</span>lookDir<span class="op">.</span>z <span class="op">*</span> viewDistance<span class="op">)</span> <span class="op">*</span> a</span>
+<span id="cb3-11">                <span class="op">);</span></span>
+<span id="cb3-12">                <span class="co">// round and test for a block</span></span>
+<span id="cb3-13">                block <span class="op">=</span> gameManager<span class="op">-&gt;</span>getBlock<span class="op">(</span></span>
+<span id="cb3-14">                        <span class="dt">int</span><span class="op">(</span>reach<span class="op">.</span>x <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
+<span id="cb3-15">                        <span class="dt">int</span><span class="op">(</span>reach<span class="op">.</span>y <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
+<span id="cb3-16">                        <span class="dt">int</span><span class="op">(</span>reach<span class="op">.</span>z <span class="op">+</span> <span class="fl">0.5</span><span class="op">)</span></span>
+<span id="cb3-17">                <span class="op">);</span></span>
+<span id="cb3-18">                <span class="cf">if</span><span class="op">(</span>block <span class="op">!=</span> <span class="kw">nullptr</span> <span class="op">&amp;&amp;</span> block<span class="op">-&gt;</span>id <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{"{"}</span></span>
+<span id="cb3-19">                        selectedBlock <span class="op">=</span> block<span class="op">;</span> </span>
+<span id="cb3-20">                        selectedBlockCoords <span class="op">=</span> glm<span class="op">::</span>vec3<span class="op">(</span></span>
+<span id="cb3-21">                                <span class="bu">std::</span>floor<span class="op">(</span>reach<span class="op">.</span>x <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
+<span id="cb3-22">                                <span class="bu">std::</span>floor<span class="op">(</span>reach<span class="op">.</span>y <span class="op">+</span> <span class="fl">0.5</span><span class="op">),</span></span>
+<span id="cb3-23">                                <span class="bu">std::</span>floor<span class="op">(</span>reach<span class="op">.</span>z <span class="op">+</span> <span class="fl">0.5</span><span class="op">)</span></span>
+<span id="cb3-24">                        <span class="op">);</span></span>
+<span id="cb3-25">                        <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb3-26">                <span class="op">}</span></span>
+<span id="cb3-27">        <span class="op">}</span></span>
+<span id="cb3-28">        selectedBlock <span class="op">=</span> <span class="kw">nullptr</span><span class="op">;</span></span>
+<span id="cb3-29"><span class="op">}</span></span></code></pre></div>
 <p>One limitation I’ve found with this method is that it can be
 inaccurate and miss blocks. Say the player is looking at the corner of a
 block and the ray from the players view begins to march forward to its
