@@ -38,14 +38,14 @@ make the thing do the thing. Luckily right now, it kinda does the thing!
 As of writing, we have a decent api (though far from complete or final)
 allowing the manipulation of window position and size as well as fairly
 complex keybinds and some elementary hook based events. The hooks were
-actually an idea I though worked really well in emacs, suggesting its
+actually an idea I thought worked really well in emacs, suggesting its
 inclusion as part of the main design philosophy of Mezzaluna. Using this
 said API, we have cobbled together a terrible “mimic” of the classic <a href="https://dwm.suckless.org">DWM</a>
 workflow, sans the ability to organize windows by tags. I don’t intend
 to reveal too much, as that would give me a reason to write more blogs,
 but I’m so excited for this project that I could go on and on and
 on.</p>
-<p>If you wan’t to <a href="https://github.com/MezzalunaWM/Mezzaluna">check the project out</a>, you’ll just need <a href="https://gitlab.freedesktop.org/wlroots/wlroots">wlroots-0.19</a>,
+<p>If you want to <a href="https://github.com/MezzalunaWM/Mezzaluna">check the project out</a>, you’ll just need <a href="https://gitlab.freedesktop.org/wlroots/wlroots">wlroots-0.19</a>,
 <a href="https://www.pixman.org/">pixman</a>, <a href="https://xkbcommon.org/">xkbcommon</a>, and <a href="https://ziglang.org/">Zig 0.15</a>. The default config can be seen within
 <code>runtime/share/mezzaluna/init.lua</code>. Feel free to have fun
 with it, reach out with questions (hdiambrosio@gmail.com) or just talk about it! And absolutely

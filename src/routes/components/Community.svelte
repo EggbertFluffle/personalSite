@@ -29,7 +29,8 @@
 		<li><a target="_blank" href="https://lunarflame.dev/">LunarFlame Studios</a> - Independant game dev team responsible for  the endlessly entertaining <a target="_blank" href="https://lunarflame.dev/projects/project-leo">Project Leo</a>. A fantastic game and team.</li>
 		<li><a target="_blank" href="https://squi.bid">Squibid</a> - Personal projects, blogs from the one, the only, Squibid.</li>
 		<li><a target="_blank" href="https://www.onocu.com">_Orange</a> - Three oranges in a trench coat, and great tea connoisseur.</li>
-		<li><a target="_blank" href="https://wideeyed.online/">lafayette°</a> - Electric classmate and <a target="_blank" href="https://www.instagram.com/lafayette.degrees/">graphic design hobbyist</a></li>
+		<li><a target="_blank" href="https://wideeyed.online/">lafayette°</a> - Electric classmate and <a target="_blank" href="https://www.instagram.com/lafayette.degrees/">graphic design hobbyist</a>.</li>
+		<li><a target="_blank" href="https://andrynasief.github.io/andrynasief/">bomba</a> - Egyptian React dev... nuff said.</li>
 	</ul>
 </div>
 
