@@ -1,17 +1,18 @@
 <h1 id="in-praise-of-the-client-server-architecture">In Praise of the
 Client Server Architecture</h1>
-<p>I have recently been thinking about the server/client architecture in
-regards to designing software. This came about when I was talking to a
-friend about how eveytime I hear about multiplayer game development, its
-almost unanimous that its a good idea to build with multiplayer in mind
-from the start. Adding multiplayer to games later into development is
-said to be hard. This lead me to think about games where the multiplayer
-is well done, vs games where the multiplayer experience is often really
-poor. Then this lead me to realize I use this style software everywhere
-from text editors, games and even audio backends. Its far more prevelant
-than I first assumed, but why? First I want to look at what makes a good
-multiplayer experience because I think its just the most obvious first
-step when talking about server/client architecture in software.</p>
+<p>I have recently been thinking about the server/client architecture
+with regards to designing software. This came about when I was talking
+to a friend about how eveytime I hear about multiplayer game
+development, it’s almost unanimous that it’s a good idea to build with
+multiplayer in mind from the start. Adding multiplayer to games later
+into development is said to be hard. This lead me to think about games
+where the multiplayer is well done, vs games where the multiplayer
+experience is often really poor. Then this lead me to realize I use this
+style of software everywhere from text editors, to games and even audio
+backends. Its far more prevelant than I first assumed, but why? First I
+want to look at what makes a good multiplayer experience because I think
+it’s just the most obvious first step when talking about server/client
+architecture in software.</p>
 <h2 id="multiplayer-games">Multiplayer games</h2>
 <p>So I have claimed that Minecraft has well done multiplayer, but why?
 Just to avoid confusion, I am only talking about the Java Edition of the
